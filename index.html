@@ -1,1 +1,1412 @@
-Hello World
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8>
+    <meta name=viewport content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
+    <meta name=keywords content="粉粉,粉粉日记,日记,fenfen,盘隆科技,盘隆,上海盘隆,iphone,android,app,记事,便利贴,记账,大姨妈,月经,经期,聊天,交友,社交,社区,论坛,计划,纪念日,日历,万年历,农 历,星座,im">
+    <meta name=description content="粉粉日记是千万mm喜爱的生活记事、社交聊天交友应用，可以写日记，记事，便利贴便签，记账，纪念日生日，计划表，经期大姨妈记录等，生活的全能助手。在粉粉社区， 有女生感兴趣的话题内容，还是交友、聊天、记录分享心情的场所，期待您的加入。">
+    <link rel=apple-touch-icon-precomposed href=https://icon.fenfenriji.com/14/86/2C/2/2.png>
+    <link rel=apple-touch-icon-precomposed sizes=114x114 href=https://icon.fenfenriji.com/14/86/2C/2/2.png!icon?f350c>
+    <link rel=apple-touch-icon-precomposed sizes=72x72 href=https://icon.fenfenriji.com/14/86/2C/2/2.png>
+    <link rel=apple-touch-icon-precomposed sizes=144x144 href=https://icon.fenfenriji.com/14/86/2C/2/2.png>
+    <link rel="shortcut icon" href=https://d.fenfenriji.com/pink/static/images/favicon.ico>
+    <title>粉粉日记- 记录生活点点滴滴，粉粉社区-分享生活中的快乐</title>
+    <link rel="stylesheet" href="https://d.fenfenriji.com/pink/static_v2/css/reset.css">
+    <link id="pcCss" rel=stylesheet>
+    <link id="mobCss" rel=stylesheet>
+    <script src="https://d.fenfenriji.com/pink/static_v2/js/jquery-1.10.2.min.js"></script>
+    <script src="https://d.fenfenriji.com/pink/static_v2/js/jquery.qrcode.min.js"></script>
+    <script id="pingpp" src="https://d.fenfenriji.com/pink/static_v2/js/pingpp.js"></script>
+<style>
+    #app, #mobile {
+        /*display: none*/
+    }
+    #mobile header>ul>li>i {
+        display: block;
+        width: 0.4693rem;
+        height: 0.2987rem;
+        background: url(https://d.fenfenriji.com/pink/static_v2/images/recTangle1.png) 0 0 no-repeat;
+        background-size: 100% 100%;
+        position: absolute;
+        right: 0;
+        top: 0.74667rem;
+    }
+    #mobile header>ul>li>i.arrows {
+        background-image: url(https://d.fenfenriji.com/pink/static_v2/images/recTangle2.png);
+    }
+</style>
+<script>
+    !(function(doc, win) {
+        var docEle = doc.documentElement,
+            evt = "onorientationchange" in window ? "orientationchange" : "resize",
+            fn = function() {
+                var width = docEle.clientWidth;
+                width && (docEle.style.fontSize = width / 16 + "px");
+            };
+        fn();
+    }(document, window));
+</script>
+</head>
+<body>
+        <div style="display: none">
+            <script src="https://s4.cnzz.com/z_stat.php?id=4370098&web_id=4370098" language=JavaScript></script>
+            <script>//声明_czc对象:
+                var _czc = _czc || [];
+                _czc.push(["_setAccount", "4370098"]);
+                function trackEvent(action){
+                    _czc.push(﻿["_trackEvent", 'pink_officialPage', action])
+                }
+
+                /**
+                 * pv统计事件名
+                 *
+                 * 访问页面统计事件名:
+                 * 1. visitIndex: 首页
+                 * 2. visitVip: 会员购买页面
+                 * 3. visitJoin: 加入我们页面
+                 * 4. visitPrivacy: 隐私政策
+                 * 5. visitHelp: 帮助页面
+                 *
+                 * 按钮事件统计事件名:
+                 * 1. buyVip_cdkey: 兑换码购买会员
+                 * 2. buyVip_ali: 支付宝购买会员创建成功
+                 * 3. buyVip_wx: 微信扫码购买会员创建成功
+                 * 4. alipay_pc_direct: 支付宝购买会员创建订单(成功和失败总数)
+                 * 5. wx_pub_qr: 微信购买会员创建订单(成功和失败总数)
+                 *
+                 * 注: 1. 所有统计显示皆为: pink_officialPage + 事件名
+                 *        例如: 访问首页: pink_officialPage + visitIndex
+                 *     2. 第2,3 会员购买按钮事件统计皆是统计订单生成数量, 不作实际支付数据参考
+                 */
+             </script>
+        </div>
+        <div id=app style=""></div>
+        <div id="mobile" style="height: 100%;">
+            <header class="select" style="position: fixed;top: 0;left: 0;width: 100%">
+                <ul class="clearfix navBox">
+                    <li class="choosed nav0" data-action="index">
+                        <span>&nbsp;首页&nbsp;<i class="line"></i></span>
+                    </li>
+                    <li class="nav1" data-action="vip">
+                        <span>&nbsp;会员&nbsp;<i class="line"></i></span>
+                    </li>
+                    <li class="nav2" data-action="join">
+                        <span>&nbsp;加入我们&nbsp;<i class="line"></i></span>
+                        <i class=""></i>
+                        <ul class="selectBox selectBox0">
+                            <li data-action="join0">
+                                设计团队
+                            </li>
+                            <li data-action="join1">
+                                内容团队
+                            </li>
+                            <li data-action="join2">
+                                运营团队
+                            </li>
+                            <li data-action="join3">
+                                技术团队
+                            </li>
+                            <li data-action="join4">
+                                关于我们
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav4" data-action="agreement">
+                        <span>&nbsp;粉粉协议&nbsp;<i class="line"></i></span>
+                        <i class=""></i>
+                        <ul class="selectBox selectBox2">
+                            <li data-action="agreement0">
+                                隐私政策
+                            </li>
+                            <li data-action="agreement1">
+                                侵权投诉
+                            </li>
+                            <li data-action="agreement2">
+                                苹果支付
+                            </li>
+                            <li data-action="agreement3">
+                                注册条款
+                            </li>
+                            <li data-action="agreement4">
+                                社区公约
+                            </li>
+                            <li data-action="agreement5">
+                                会员协议
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav3" data-action="help">
+                        <span>&nbsp;帮助&nbsp;<i class="line"></i></span>
+                        <i class=""></i>
+                        <ul class="selectBox selectBox1">
+                            <li data-action="help0">
+                                账户问题
+                            </li>
+                            <li data-action="help1">
+                                数据安全
+                            </li>
+                            <li data-action="help2">
+                                联系我们
+                            </li>
+                            <li data-action="help3">
+                                隐私政策
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </header>
+            <div style="height: 2.56rem"></div>
+            <section class="box index select" style="min-height: calc(100% - 4.2667rem);position: relative;padding-bottom: 1.7067rem;-webkit-user-select: none;
+            -moz-user-focus: none;
+            -moz-user-select: none;">
+                
+            </section>
+            <div class="showCode flex_center" style="position: fixed;width: 100%;height: 100%;background-color: rgba(0,0,0,0.6);top: 0;left: 0;z-index: 999999999999;display: none;">
+                <div class="showCodeTxt" style="display: none;">
+                    <img src="https://d.fenfenriji.com/web/wxapp/pinkshop/loading.gif" alt="" style="display: block;width: 1.28rem;margin: 0 auto 0.4267rem">
+                    <p style="color: #fff;font-size: 0.64rem;text-align: center;">请求中</p>
+                    <p style="color: #fff;font-size: 0.64rem;text-align: center;">尊贵的身份从来不是那么简单~</p>
+                </div>
+                <div class="codeBox" style="display: none;">
+                    <p>请使用微信扫一扫</p>
+                    <div id="qrcode" class="pointer">
+                    </div>
+                </div>
+            </div>
+            
+
+            
+
+            <!-- 首页模板 start -->
+            <script type="text/html" id="index">
+                <div class="section section1" style="">
+                    <div style="height: 90%;min-height: 16.5467rem">
+                        <img src="https://d.fenfenriji.com/pink/static_v2/images/top.png" alt="" width="100%" style="margin-top: -2.56rem">
+                        <p>我的专属贴心闺蜜</p>
+                        <a href="https://android.myapp.com/myapp/detail.htm?apkName=pinkdiary.xiaoxiaotu.com&ADTAG=mobile" target="_blank" class="pointer downBtn">立即下载</a>
+                        <!-- <a href="weixin://wxpay/bizpayurl?pr=HisoziK" target="_blank" class="pointer downBtn">立即下载1</a> -->
+                    </div>
+                    <img src="https://d.fenfenriji.com/pink/static_v2/images/next.png" alt="" class="goDown">
+                </div>
+                <div class="section section2" style="">
+                    <div style="height: 8%"></div>
+                    <div style="height: 92%;background: #fff url('https://d.fenfenriji.com/pink/static_v2/images/1.png') 50% 100% no-repeat;background-size: contain;"></div>
+                </div>
+                <div class="section section3">
+                    <div style="height: 8%"></div>
+                    <div style="height: 92%;background: #fff url('https://d.fenfenriji.com/pink/static_v2/images/2.png') 50% 100% no-repeat;background-size: contain;"></div>
+                        
+                    </div>
+                </div>
+                <div class="section section4">
+                    <div style="height: 8%"></div>
+                    <div style="height: 92%;background: #fff url('https://d.fenfenriji.com/pink/static_v2/images/3.png') 50% 100% no-repeat;background-size: contain;"></div>
+                </div>
+                <div class="section section5">
+                    <div style="height: 8%"></div>
+                    <div style="height: 92%;background: #fff url('https://d.fenfenriji.com/pink/static_v2/images/4.png') 50% 100% no-repeat;background-size: contain;"></div>
+                </div>
+                <a href="https://android.myapp.com/myapp/detail.htm?apkName=pinkdiary.xiaoxiaotu.com&ADTAG=mobile" target="_blank" class="pointer downBtn" style="margin: 0 auto;">立即下载</a>
+                <div style="padding-bottom:1.1947rem"></div>
+                <footer>
+                    <ul>
+                        <li style="position: absolute;left: 0.3413rem;top: 0;width: 50%;">
+                            上海盘隆科技有限公司
+                        </li>
+                        <li style="text-align: center;">
+                             <a href="http://www.miitbeian.gov.cn" target="_blank">沪ICP备12018816号-1</a>
+                        </li>
+                        <li style="position: absolute;right: 0.3413rem;top: 0;width: 50%;text-align: right;">粉粉日记©2012-2017</li>
+                    </ul>
+                </footer>
+            </script>
+            <!-- 首页模板 end -->
+            <!-- 会员模板 start -->
+            <script type="text/html" id="vip">
+                <div class="vipBox clearfix">
+                    <div class="fillInId clearfix" style="height: 1.4507rem;padding: 0.8533rem 0.64rem 0.896rem;position: relative;">
+                        <input class="uid" type="text" placeholder="请输入要充值的粉粉ID" style="float: left;">
+                        <span class="checkUid" style="">确定</span>
+                        <p class="nickName" style="position: absolute;bottom: 0.128rem;color: #cacaca;"></p>
+                    </div>
+                    <div class="line" style="height: 0.4267rem;width: 100%;background-color: #FBF7F9;"></div>
+                    <ul class="rechargeNav clearfix">
+                        <li class="choosed" data-action='money'>
+                            充值会员
+                        </li>
+                        <li data-action="cdKey">
+                            使用兑换码
+                        </li>
+                    </ul>
+                    <hr style="color: #EFEDED;height: 0.02133rem;opacity: 0.3;margin: 0 0.64rem 0.9387rem">
+                    <div class="money convert" style="">
+                        <h3 style="font-family: PingFangSC-Regular;">请选择套餐类型</h3>
+                        <ul class="sumType select">
+                            <li class="cleafix choosed" data-action='1'>
+                                <div class="fl">1个月<span>12</span>元</div>
+                                <i class="icon"></i>
+                            </li>
+                            <li class="cleafix" data-action='3'>
+                                <div class="fl">3个月<span>30</span>元</div>
+                                <i class="icon"></i>
+                            </li>
+                            <li class="cleafix" data-action='6'>
+                                <div class="fl">6个月<span>54</span>元</div>
+                                <i class="icon"></i>
+                            </li>
+                            <li class="cleafix" data-action='12'>
+                                <div class="fl">12个月<span>96</span>元</div>
+                                <i class="icon"></i>
+                            </li>
+                        </ul>
+                        <h3 style="margin-top: 1.7067rem;border-top: 0.0213rem solid #EFEDED;padding-top: 0.8107rem;font-family: PingFangSC-Regular;font-size: 0.5973rem">请选择支付方式</h3>
+                        <ul class="payType select" style="border: none">
+                            <!-- <li class="cleafix choosed" data-action="alipay_pc_direct">
+                                <img src="https://img.fenfenriji.com//2C/11/6E/Image/E87774A3-FFF2-C510-186A-59F6E4F3D193.png" alt="" style="">
+                                <span style="">支付宝支付</span>
+                                <i class="icon"></i>
+                            </li> -->
+                            <li class="cleafix choosed" data-action="wx_wap">
+                            <!-- <li class="cleafix" data-action="wx_pub_qr"> -->
+                                <img src="https://img.fenfenriji.com//2C/11/6E/Image/1C0AD9B6-31B1-2306-8BA1-59F6E460322E.png" alt="">
+                                <span>微信支付</span>
+                                <i class="icon"></i>
+                            </li>
+                        </ul>
+                        <div style="margin: 0.8533rem 0 1.7067rem">
+                            <span style="font-size: 0.6827rem;color: #555555;letter-spacing: 0;line-height: 0.896rem;font-family: PingFangSC-Regular;">应付金额：</span>
+                            <span class="paySum" style="font-size: 0.8533rem;color: #FF6EA4;;letter-spacing: 0;line-height: 0.896rem;font-family: PingFangSC-Regular;">12元</span>
+                        </div>
+                        <span class="toPay">确认支付</span>
+                    </div>
+                    <div class="cdKey convert" style="display: none;">
+                        <input class="cdNum" type="text" placeholder="请输入会员兑换码" style="margin-left: 0.64rem;">
+                        <hr style="margin: 0.9387rem 0.64rem 2.56rem;color: #EFEDED;height: 0.02133rem;opacity: 0.3">
+                        <span class="toExchange" style="margin-bottom: 2.56rem">兑换</span>
+                    </div>
+                    <footer>
+                        <ul>
+                            <li style="position: absolute;left: 0.3413rem;top: 0;width: 50%;">
+                                上海盘隆科技有限公司
+                            </li>
+                            <li style="text-align: center;">
+                                 <a href="http://www.miitbeian.gov.cn" target="_blank">沪ICP备12018816号-1</a>
+                            </li>
+                            <li style="position: absolute;right: 0.3413rem;top: 0;width: 50%;text-align: right;">粉粉日记©2012-2017</li>
+                        </ul>
+                    </footer>
+                </div>
+            </script>
+            <!-- 会员模板 end -->
+
+            <!-- join模板 start -->
+            <script type="text/html" id="join0">
+                <div class="joinBox">
+                    <!-- <h1><img src="https://d.fenfenriji.com/pink/static_v1/images/joinTitle.png" alt="" style="width: 11.264rem;"></h1> -->
+                    <h1><img src="https://d.fenfenriji.com/pink/static_v2/images/joinTitle.png" alt="" style="width: 11.264rem;"></h1>
+                    <h2 class="clearfix"><span>创意设计师</span></h2>
+                    <ul>
+                        <li>
+                            <i></i>
+                            插画和平面设计的基础能力
+                        </li>
+                        <li>
+                            <i></i>
+                            熟练运用sketch、AI、PS等设计软件，能独立完成设计任务
+                        </li>
+                        <li>
+                            <i></i>
+                            美术学院艺术设计专业优先考虑
+                        </li>
+                        <li>
+                            <i></i>
+                            具有独到的创意观点，较高的审美判断和鉴赏能力
+                        </li>
+                        <li>
+                            <i></i>
+                            有较强的洞察力、创意策略理解能力以及创意发展力
+                        </li>
+                    </ul>
+                    <h2 class="clearfix"><span>产品设计师</span></h2>
+                    <ul>
+                        <li>
+                            <i></i>
+                            了解不同移动设备不同移动平台的设计规范及方法
+                        </li>
+                        <li>
+                            <i></i>
+                            交互设计、视觉设计和用户研究的基础能力
+                        </li>
+                        <li>
+                            <i></i>
+                            熟练运用sketch、PS、AI、AXURE等软件，能独立完成设计
+                        </li>
+                        <li>
+                            <i></i>
+                            较强的学习能力，丰富的理论知识
+                        </li>
+                        <li>
+                            <i></i>
+                            人机交互、软件工程、工业设计、心理学、视觉传达等相关设计学科的学历优先考虑
+                        </li>
+                    </ul>
+                    <div class="email">
+                        <img src="https://img.fenfenriji.com//2C/11/6E/Image/BD39FE5B-56D3-4AEA-39D3-59F8169A95AC.png" alt="">
+                        <a href="mailto:panlonghr@ffrj.net">panlonghr@ffrj.net</a>
+                    </div>
+                </div>
+                <footer>
+                    <ul>
+                        <li style="position: absolute;left: 0.3413rem;top: 0;width: 50%;">
+                            上海盘隆科技有限公司
+                        </li>
+                        <li style="text-align: center;">
+                             <a href="http://www.miitbeian.gov.cn" target="_blank">沪ICP备12018816号-1</a>
+                        </li>
+                        <li style="position: absolute;right: 0.3413rem;top: 0;width: 50%;text-align: right;">粉粉日记©2012-2017</li>
+                    </ul>
+                </footer>
+            </script>
+
+            <script type="text/html" id="join1">
+                <div class="joinBox">
+                    <h1><img src="https://d.fenfenriji.com/pink/static_v2/images/joinTitle.png" alt="" style="width: 11.264rem;"></h1>
+                    <h2 class="clearfix"><span>娱乐编辑</span></h2>
+                    <ul>
+                        <li>
+                            <i></i>
+                            喜欢娱乐八卦，能每天都看综艺、电视剧，关注微博热点
+                        </li>
+                        <li>
+                            <i></i>
+                            会简单的视频剪辑和PS
+                        </li>
+                    </ul>
+                    <h2 class="clearfix"><span>生活编辑</span></h2>
+                    <ul>
+                        <li>
+                            <i></i>
+                            热爱生活、幽默风趣，段子、趣图、美食样样精通
+                        </li>
+                        <li>
+                            <i></i>
+                            热爱宠物和游戏
+                        </li>
+                        <li>
+                            <i></i>
+                            英语能力需要阅读没压力
+                        </li>
+                    </ul>
+                    <h2 class="clearfix"><span>美妆编辑</span></h2>
+                    <ul>
+                        <li>
+                            <i></i>
+                            爱美之人，上镜拍照不怯场
+                        </li>
+                        <li>
+                            <i></i>
+                            P图修图不在话下
+                        </li>
+                        <li>
+                            <i></i>
+                            敢于折腾各种妆容发型搭配
+                        </li>
+                    </ul>
+                    <h2 class="clearfix"><span>视频编辑</span></h2>
+                    <ul>
+                        <li>
+                            <i></i>
+                            鬼畜调教轻轻松松
+                        </li>
+                        <li>
+                            <i></i>
+                            精通视频剪辑软件
+                        </li>
+                    </ul>
+                    <h2 class="clearfix"><span>新媒体编辑</span></h2>
+                    <ul>
+                        <li>
+                            <i></i>
+                            喜欢和数据打交道
+                        </li>
+                        <li>
+                            <i></i>
+                            有良好的阅读习惯，每天保持阅读
+                        </li>
+                        <li>
+                            <i></i>
+                            追热点，追热点，追热点重要的事情说三遍
+                        </li>
+                    </ul>
+                    <div class="email">
+                        <img src="https://img.fenfenriji.com//2C/11/6E/Image/BD39FE5B-56D3-4AEA-39D3-59F8169A95AC.png" alt="">
+                        <a href="mailto:panlonghr@ffrj.net">panlonghr@ffrj.net</a>
+                    </div>
+                </div>
+                <footer>
+                    <ul>
+                        <li style="position: absolute;left: 0.3413rem;top: 0;width: 50%;">
+                            上海盘隆科技有限公司
+                        </li>
+                        <li style="text-align: center;">
+                             <a href="http://www.miitbeian.gov.cn" target="_blank">沪ICP备12018816号-1</a>
+                        </li>
+                        <li style="position: absolute;right: 0.3413rem;top: 0;width: 50%;text-align: right;">粉粉日记©2012-2017</li>
+                    </ul>
+                </footer>
+            </script>
+
+            <script type="text/html" id="join2">
+                <div class="joinBox">
+                    <h1><img src="https://d.fenfenriji.com/pink/static_v2/images/joinTitle.png" alt="" style="width: 11.264rem;"></h1>
+                    <h2 class="clearfix"><span>社区运营／内容运营</span></h2>
+                    <ul>
+                        <li>
+                            <i></i>
+                            性格活泼开朗，有自己专注的兴趣领域或爱好
+                        </li>
+                        <li>
+                            <i></i>
+                            喜爱混迹各社交网站
+                        </li>
+                    </ul>
+                    <h2 class="clearfix"><span>产品运营</span></h2>
+                    <ul>
+                        <li>
+                            <i></i>
+                            深刻理解用户需求，保持敏锐用户感觉
+                        </li>
+                        <li>
+                            <i></i>
+                            通过数据基础，推动产品的改进
+                        </li>
+                        <li>
+                            <i></i>
+                            积极乐观，较强的沟通、协调能力和团队协作能力
+                        </li>
+                    </ul>
+                    <h2 class="clearfix"><span>活动运营</span></h2>
+                    <ul>
+                        <li>
+                            <i></i>
+                            有创意，有行动力，热爱生活
+                        </li>
+                        <li>
+                            <i></i>
+                            责任心强，逻辑性强
+                        </li>
+                        <li>
+                            <i></i>
+                            性格积极，注重细节
+                        </li>
+                    </ul>
+                    <h2 class="clearfix"><span>新媒体运营</span></h2>
+                    <ul>
+                        <li>
+                            <i></i>
+                            有社交新媒体重度用户
+                        </li>
+                        <li>
+                            <i></i>
+                            熟悉互联网，爱刷爱逛，文字功底好
+                        </li>
+                        <li>
+                            <i></i>
+                            爱八卦、擅聊天、有品位、玩得转PS
+                        </li>
+                    </ul>
+                    <div class="email">
+                        <img src="https://img.fenfenriji.com//2C/11/6E/Image/BD39FE5B-56D3-4AEA-39D3-59F8169A95AC.png" alt="">
+                        <a href="mailto:panlonghr@ffrj.net">panlonghr@ffrj.net</a>
+                    </div>
+                </div>
+                <footer>
+                    <ul>
+                        <li style="position: absolute;left: 0.3413rem;top: 0;width: 50%;">
+                            上海盘隆科技有限公司
+                        </li>
+                        <li style="text-align: center;">
+                             <a href="http://www.miitbeian.gov.cn" target="_blank">沪ICP备12018816号-1</a>
+                        </li>
+                        <li style="position: absolute;right: 0.3413rem;top: 0;width: 50%;text-align: right;">粉粉日记©2012-2017</li>
+                    </ul>
+                </footer>
+            </script>
+            <script type="text/html" id="join3">
+                <div class="joinBox">
+                    <h1><img src="https://d.fenfenriji.com/pink/static_v2/images/joinTitle.png" alt="" style="width: 11.264rem;"></h1>
+                    <h2 class="clearfix"><span>IOS/Android开发工程师</span></h2>
+                    <ul>
+                        <li>
+                            <i></i>
+                            熟悉IOS或Android开发，以及常用数据结构与算法
+                        </li>
+                        <li>
+                            <i></i>
+                            精通UI控件封装，熟悉网络编程、数据存储相关知识
+                        </li>
+                    </ul>
+                    <h2 class="clearfix"><span>大数据分析工程师</span></h2>
+                    <ul>
+                        <li>
+                            <i></i>
+                            有统计分析功底与快速精准的分析能力，
+                        </li>
+                        <li>
+                            <i></i>
+                            熟悉数据相关处理工具
+                        </li>
+                        <li>
+                            <i></i>
+                            有模型设计、诊断、开发、验证经验，了解大数据生态技术（Hadoop, Spark等）者优先
+                        </li>
+                    </ul>
+                    <h2 class="clearfix"><span>前端开发工程师</span></h2>
+                    <ul>
+                        <li>
+                            <i></i>
+                            具有JavaScript开发经验
+                        </li>
+                        <li>
+                            <i></i>
+                            能熟练使用常见类库或框架
+                        </li>
+                        <li>
+                            <i></i>
+                            了解Vue、React或其他MVC框架
+                        </li>
+                    </ul>
+                    <h2 class="clearfix"><span>后端开发工程师</span></h2>
+                    <ul>
+                        <li>
+                            <i></i>
+                            熟悉PHP、Nodejs、Python语言，
+                        </li>
+                        <li>
+                            <i></i>
+                            了解数据库编程（MySQL、Redis）
+                        </li>
+                        <li>
+                            <i></i>
+                            对Linux系统管理、安全有较好的认知
+                        </li>
+                    </ul>
+                    <h2 class="clearfix"><span>测试工程师</span></h2>
+                    <ul>
+                        <li>
+                            <i></i>
+                            爱好网络社交、喜欢使用各种有趣APP
+                        </li>
+                        <li>
+                            <i></i>
+                            观察仔细、思维活跃、有耐心，责任心强
+                        </li>
+                    </ul>
+                    <div class="email">
+                        <img src="https://img.fenfenriji.com//2C/11/6E/Image/BD39FE5B-56D3-4AEA-39D3-59F8169A95AC.png" alt="">
+                        <a href="mailto:panlonghr@ffrj.net">panlonghr@ffrj.net</a>
+                    </div>
+                </div>
+                <footer>
+                    <ul>
+                        <li style="position: absolute;left: 0.3413rem;top: 0;width: 50%;">
+                            上海盘隆科技有限公司
+                        </li>
+                        <li style="text-align: center;">
+                             <a href="http://www.miitbeian.gov.cn" target="_blank">沪ICP备12018816号-1</a>
+                        </li>
+                        <li style="position: absolute;right: 0.3413rem;top: 0;width: 50%;text-align: right;">粉粉日记©2012-2017</li>
+                    </ul>
+                </footer>
+            </script>
+            <script type="text/html" id="join4">
+                <div class="joinBox">
+                    <h1><img src="https://d.fenfenriji.com/pink/static_v2/images/joinTitle.png" alt="" style="width: 11.264rem;"></h1>
+                    <p class="txt">
+                        上海盘隆科技有限公司于2012年推出《粉粉日记》手机软件，是以日记记录为切入点，经期记录、记事、记账、纪念日、计划等功能的生活全能记录工具。同时拥有的粉粉社区，为女性提供了一个兴趣娱乐交流分享、闺蜜交友聊天的社交平台。
+                    </p>
+                </div>
+                <footer>
+                    <ul>
+                        <li style="position: absolute;left: 0.3413rem;top: 0;width: 50%;">
+                            上海盘隆科技有限公司
+                        </li>
+                        <li style="text-align: center;">
+                             <a href="http://www.miitbeian.gov.cn" target="_blank">沪ICP备12018816号-1</a>
+                        </li>
+                        <li style="position: absolute;right: 0.3413rem;top: 0;width: 50%;text-align: right;">粉粉日记©2012-2017</li>
+                    </ul>
+                </footer>
+            </script>
+            <!-- join模板 end -->
+
+            <!-- help模板 start -->
+            <script type="text/html" id="help0">
+                <div class="helpBox">
+                    <h1><img src="https://d.fenfenriji.com/pink/static_v2/images/helpTitle.png" alt="" style="width: 12.2027rem;"></h1>
+                    <h2>
+                        <i style="display: block;float: left;width: 0.3rem;height: 0.3rem;background: url('https://d.fenfenriji.com/pink/static_v2/images/fill3.png') 0 0 no-repeat;background-size: 100% 100%;margin-top: 0.256rem;margin-left: 0.64rem"></i>
+                        <img src="https://d.fenfenriji.com/pink/static_v2/images/acc1.png" alt="" style="height: 1.7067rem;">
+                    </h2>
+                    <ul>
+                        <li>
+                            1.启动粉粉程序时的密码锁密码 
+                        </li>
+                        <li>
+                            2.粉粉账号的密码（用来网络云备份同步数据和使用粉粉社区的）；
+                        </li>
+                    </ul>
+                    <h2>
+                        <i style="display: block;float: left;width: 0.3rem;height: 0.3rem;background: url('https://d.fenfenriji.com/pink/static_v2/images/fill3.png') 0 0 no-repeat;background-size: 100% 100%;margin-top: 0.256rem;margin-left: 0.64rem"></i>
+                        <img src="https://d.fenfenriji.com/pink/static_v2/images/acc2.png" alt="" style="height: 0.768rem;padding-left:0.4267rem">
+                    </h2>
+                    <ul>
+                        <li>1. QQ号、新浪微博、微信，直接登录注册：在登录界面，点击QQ、新浪微博或微信登录按钮，进行登录。账号和密码是QQ号、新浪微博或微信的。</li>
+                        <li>2.普通粉粉账号注册：在登录界面，点击忘记账号/密码，选择邮箱找回，输入注册邮箱，系统会发邮件告诉您粉粉账号和密码的（邮件可能在订阅/广告/垃圾邮箱里）。</li>
+                        <li>3.手机号注册粉粉账号（2015年12月5日后推出的新功能，之前没有手机号注册）：在登录界面，点击忘记账号/密码，选择手机号找回，输入手机号，稍等之后会收到验证码，使用手机号登录。</li>
+                        <li>4.登录后可以在粉粉设置，或者粉粉社区的个人资料设置界面，更新密码、邮箱和个人信息。 粉粉社区-我的-账号管理，或者在粉粉设置-账号管理，可以设置账号绑定，多种方式登录粉粉账号。</li>
+                    </ul>
+                    <h2>
+                        <i style="display: block;float: left;width: 0.3rem;height: 0.3rem;background: url('https://d.fenfenriji.com/pink/static_v2/images/fill3.png') 0 0 no-repeat;background-size: 100% 100%;margin-top: 0.256rem;margin-left: 0.64rem"></i>
+                        <img src="https://d.fenfenriji.com/pink/static_v2/images/acc3.png" alt="" style="height:0.7253rem;padding-left:0.4267rem">
+                    </h2>
+                    <ul>
+                        <li>1.手机联网 - 启动粉粉 - 点击“忘记密码锁密码” - 自助找回；</li>
+                        <li>2.系统会自动发送4位新密码到您的邮箱，请登录邮箱查看（可能在垃圾广告邮箱里面）；</li>
+                        <li>3.手机不能联网，网络错误，之前没有设置过密码邮箱，邮箱设置错误，或者检测不到密码邮箱，系统就不能发送密码邮件，请使用下面的手动找回密码功能；</li>
+                    </ul>
+                    <h2>
+                        <i style="display: block;float: left;width: 0.3rem;height: 0.3rem;background: url('https://d.fenfenriji.com/pink/static_v2/images/fill3.png') 0 0 no-repeat;background-size: 100% 100%;margin-top: 0.256rem;margin-left: 0.64rem"></i>
+                        <img src="https://d.fenfenriji.com/pink/static_v2/images/acc4.png" alt="" style="height:0.768rem;padding-left:0.4267rem">
+                    </h2>
+                    <ul>
+                        <li>1.完全关闭退出粉粉日记；</li>
+                        <li>2.先把手机和手机SD卡根目录下的xiaoxiaotu文件夹复制到电脑，作为数据备份（可跳过这步，但还是强烈建议备份一下数据）；</li>
+                        <li>3.进入手机的系统设置界面 - 应用程序（应用程序管理） - 粉粉日记 - 清除数据；（危险操作！特殊情况外，请不要执行清除数据操作）； 或者删除粉粉日记，重新安装（但不能删除清理粉粉日记的文件）；</li>
+                        <li>4.再打开粉粉日记即可解除密码；</li>
+                    </ul>
+                    <h2>
+                        <i style="display: block;float: left;width: 0.3rem;height: 0.3rem;background: url('https://d.fenfenriji.com/pink/static_v2/images/fill3.png') 0 0 no-repeat;background-size: 100% 100%;margin-top: 0.256rem;margin-left: 0.64rem"></i>
+                        <img src="https://d.fenfenriji.com/pink/static_v2/images/acc5.png" alt="" style="height: 0.8107rem;padding-left:0.4267rem">
+                    </h2>
+                    <ul>
+                        <li>苹果手机，只能删除粉粉日记，清除密码锁密码，但记录也会一起清除；</li>
+                        <li>之前没有注册过粉粉账号，没有用过同步云备份网络备份过记录，就没法恢复记录了；</li>
+                        <li>如果用过同步云备份，就可以恢复记录；</li>
+                        <li>恢复记录方法：重新安装最新版本的粉粉日记，登录账号，用同步云备份功能，恢复之前的记录。</li>
+                    </ul>
+                    <div style="height: 2.1333rem"></div>
+                </div>
+                <footer>
+                    <ul>
+                        <li style="position: absolute;left: 0.3413rem;top: 0;width: 50%;">
+                            上海盘隆科技有限公司
+                        </li>
+                        <li style="text-align: center;">
+                             <a href="http://www.miitbeian.gov.cn" target="_blank">沪ICP备12018816号-1</a>
+                        </li>
+                        <li style="position: absolute;right: 0.3413rem;top: 0;width: 50%;text-align: right;">粉粉日记©2012-2017</li>
+                    </ul>
+                </footer>
+            </script>
+            <script type="text/html" id="help1">
+                <div class="helpBox">
+                    <h1><img src="https://d.fenfenriji.com/pink/static_v2/images/helpTitle.png" alt="" style="width: 12.2027rem;"></h1>
+                    <h2>
+                        <i style="display: block;float: left;width: 0.3rem;height: 0.3rem;background: url('https://d.fenfenriji.com/pink/static_v2/images/fill3.png') 0 0 no-repeat;background-size: 100% 100%;margin-top: 0.256rem;margin-left: 0.64rem"></i>
+                        <img src="https://d.fenfenriji.com/pink/static_v2/images/inf1.png" alt="" style="height: 0.7253rem;padding-left:0.4267rem">
+                    </h2>
+                    <ul>
+                        <li>1.粉粉同步云备份是把粉粉日记所有的数据都保存备份在粉粉的网络服务器上；</li>
+                        <li>2.如数据出现意外问题，手机损坏丢失刷机，更换手机或SD卡，卸载重装等情况，可以在 wifi网络下登录账号恢复记录；（安卓4.34，苹果4.8.0之后的新版本wifi网络自动云备份恢复。旧版本在我的-粉粉设置-同步管理，手动点击同步按钮，恢复之前的记录）。</li>
+                        <li>3.可以在安卓和苹果两大平台的粉粉日记之间保存数据，建议定期使用，或者设置Wifi自动同步云备份；</li>
+                        <li>4.粉粉同步云备份保存的记录都是保密的；</li>
+                        <li>5.更换手机，使用粉粉设置 - 同步云备份，在粉粉网络服务器上保存转移数据到新手机；</li>
+                        <li>操作方法：</li>
+                        <li>1). 旧手机登录注册一个粉粉账号，同步云备份（我的-设置-同步云备份），上传保存数据；</li>
+                        <li>2). 新手机登陆同一个粉粉账号，同步云备份，再把数据保存下来；</li>
+                    </ul>
+                    <h2>
+                        <i style="display: block;float: left;width: 0.3rem;height: 0.3rem;background: url('https://d.fenfenriji.com/pink/static_v2/images/fill3.png') 0 0 no-repeat;background-size: 100% 100%;margin-top: 0.256rem;margin-left: 0.64rem"></i>
+                        <img src="https://d.fenfenriji.com/pink/static_v2/images/inf2.png" alt="" style="height: 0.768rem;padding-left:0.4267rem">
+                    </h2>
+                    <ul>
+                        <li>1.粉粉社区的记录，是直接保存在网络上的。登录账号后，可以直接查看；</li>
+                        <li>2.我的日记、日历、小箩筐里的记录，是保存在手机里的。使用过云备份同步之后，才保存在网络上；</li>
+                        <li>3.更换手机、刷机，格式化SD卡，等等，请先备份数据。</li>
+                    </ul>
+                    <h2>
+                        <i style="display: block;float: left;width: 0.3rem;height: 0.3rem;background: url('https://d.fenfenriji.com/pink/static_v2/images/fill3.png') 0 0 no-repeat;background-size: 100% 100%;margin-top: 0.256rem;margin-left: 0.64rem"></i>
+                        <img src="https://d.fenfenriji.com/pink/static_v2/images/inf5.png" alt="" style="height: 0.768rem;padding-left:0.4267rem">
+                    </h2>
+                    <ul>
+                        <li>1.安卓4.34，苹果4.8.0之后的新版本，只显示当前登录账号的日记和小箩筐记录。其他账号记录，请切换账号登录；</li>
+                        <li>2.更换、格式化了SD卡，或者SD卡损坏、读取有问题。运行过程中，插拔过SD卡；</li>
+                        <li>3.修改，删除了SD卡上的程序文件夹，如xiaoxiaotu，fenfenWallet，fenfenriji-备份日期-beifen.zip等等；</li>
+                        <li>4.更换了手机；</li>
+                        <li>5.使用垃圾清理、深度清理、安全卫士、磁盘管理软件对手机进行了清理、整理或提速，导致记录或图片等附件丢失。清理时，不要选择粉粉；</li>
+                        <li>6.刷机，刷系统rom，安卓手机Root，苹果手机越狱，恢复手机出厂设置或重置；</li>
+                        <li>7.卸载、删除过软件；</li>
+                        <li>8.卸载软件，安装旧版本，之后又升级到新版本； 9. 在我的日记界面，使用了右上角的筛选功能，只显示了部分记录。全部选择即可查看记录；</li>
+                        <li>9. 在我的日记界面，使用了右上角的筛选功能，只显示了部分记录。全部选择即可查看记录；</li>
+                        <li>10.粉粉设置 - 恢复/备份 - 恢复坏的备份包，导致记录丢失；或者恢复了旧的备份包，备份日期之后的记录消失（安卓）；</li>
+                        <li>11.使用多个账号，切换使用不同的账号，导致记录出现问题，各个账号网络备份记录不全；</li>
+                    </ul>
+                    <div style="height: 2.1333rem"></div>
+                </div>
+                <footer>
+                    <ul>
+                        <li style="position: absolute;left: 0.3413rem;top: 0;width: 50%;">
+                            上海盘隆科技有限公司
+                        </li>
+                        <li style="text-align: center;">
+                             <a href="http://www.miitbeian.gov.cn" target="_blank">沪ICP备12018816号-1</a>
+                        </li>
+                        <li style="position: absolute;right: 0.3413rem;top: 0;width: 50%;text-align: right;">粉粉日记©2012-2017</li>
+                    </ul>
+                </footer>
+            </script>
+            <script type="text/html" id="help2">
+                <div class="helpBox">
+                    <h1><img src="https://d.fenfenriji.com/pink/static_v2/images/helpTitle.png" alt="" style="width: 12.2027rem;"></h1>
+                    <h2>
+                        <i style="display: block;float: left;width: 0.3rem;height: 0.3rem;background: url('https://d.fenfenriji.com/pink/static_v1/images/fill3.png') 0 0 no-repeat;background-size: 100% 100%;margin-top: 0.256rem;margin-left: 0.64rem"></i>
+                        <img src="https://d.fenfenriji.com/pink/static_v2/images/relation1.png" alt="" style="">
+                    </h2>
+                    <ul>
+                        <li>客服邮箱：<a href="mailto:service@ffrj.net">service@ffrj.net</a></li>
+                        <li>商务合作：<a href="mailto:bd@ffrj.net">bd@ffrj.net</a></li>
+                    </ul>
+                    <h2>
+                        <i style="display: block;float: left;width: 0.3rem;height: 0.3rem;background: url('https://d.fenfenriji.com/pink/static_v1/images/fill3.png') 0 0 no-repeat;background-size: 100% 100%;margin-top: 0.256rem;margin-left: 0.64rem"></i>
+                        <img src="https://d.fenfenriji.com/pink/static_v2/images/relation2.png" alt="" style="">
+                    </h2>
+                    <ul>
+                        <li class="goQQ1" style="-moz-user-select: text;-webkit-user-select: text;-ms-user-select: text;-khtml-user-select: text;user-select: text;">
+                            <a href="mqqapi://card/show_pslcard?src_type=internal&version=1&uin=109478659&card_type=group&source=external">苹果QQ群：109478659</a>
+                        </li>
+                        <li style="-moz-user-select: text;-webkit-user-select: text;-ms-user-select: text;-khtml-user-select: text;user-select: text;">
+                            <a href="mqqapi://card/show_pslcard?src_type=internal&version=1&uin=211404933&card_type=group&source=external">安卓QQ群：211404933</a>
+                        </li>
+                    </ul>
+                    <div style="height: 2.1333rem"></div>
+                </div>
+                <footer>
+                    <ul>
+                        <li style="position: absolute;left: 0.3413rem;top: 0;width: 50%;">
+                            上海盘隆科技有限公司
+                        </li>
+                        <li style="text-align: center;">
+                             <a href="http://www.miitbeian.gov.cn" target="_blank">沪ICP备12018816号-1</a>
+                        </li>
+                        <li style="position: absolute;right: 0.3413rem;top: 0;width: 50%;text-align: right;">粉粉日记©2012-2017</li>
+                    </ul>
+                </footer>
+            </script>
+            <!-- help模板 end -->
+
+            <!-- 协议模板 start -->
+            <!-- 隐私协议 -->
+            <script type="text/html" id="agreement0">
+                <div class="helpBox privacy" id="agreementBox">
+                    <h1><img src="https://img.fenfenriji.com//ED/56/AF/Image/5D23B1C8-BCF7-BADB-4C4C-5AB1C485CD9E.png" alt="" style="width: 9.3867rem"></h1>
+                    <h2><i class="fill fill3"></i>引言</h2>
+                    <p><span class="kg">空格</span>我们非常重视用户的隐私和个人信息保护。您在使用我们的产品与服务时，我们可能会收集和使用您的相关信息。我们希望通过《隐私政策》（“本隐私政策”）向您说明我们在您使用我们的产品与服务时如何收集、使用、保存、共享和转让这些信息，以及我们为您提供的访问、更新、删除和保护这些信息的方式。</p>
+
+                    <h2><i class="fill fill3"></i>我们如何收集和使用您的个人信息</h2>
+                    <p><span class="kg">空格</span>我们提供服务时，可能会收集、储存和使用下列与您有关的信息。如果您不提供相关信息，可能无法注册成为我们的用户或无法享受我们提供的某些服务，或者无法达到相关服务拟达到的效果。我们可能收集的信息类型主要包括以下几种：</p>
+                    <p>我们的产品与服务包括一些核心功能，这些功能包含了使用我们产品和服务的功能、改进我们的产品与服务所必须的功能及保障交易安全所必须的功能。我们可能会收集、保存和使用下列与您有关的信息才能实现上述这些功能。如果您不提供相关信息，您将无法享受我们提供的产品与服务。这些功能包括：</p>
+                    <h3>1、使用产品和服务所须的功能</h3>
+                    <h3>（1）用户注册</h3>
+                    <p>当您注册时，您需要至少向我们提供您准备使用的账户名、密码、您本人的手机号码、电子邮箱地址（用于验证邮箱），我们将通过发送短信验证码或邮件的方式来验证您的身份是否有效。您的账户名为您的默认昵称，您可以修改补充您的昵称、性别、生日、兴趣爱好以及您的实名验证相关信息，这些信息均属于您的“账户信息”。您补充的账户信息将有助于我们为您提供个性化的内容推荐和更优的操作体验，但如果您不提供这些补充信息，不会影响您的基本使用功能。</p>
+                    <h3>（2）内容信息展示和搜索</h3>
+
+                    <p>为了让您快速地找到您所需要的内容，我们可能会收集您使用我们的产品与服务的设备信息（包括设备名称、设备型号、设备识别码、操作系统和应用程序版本、语言设置、分辨率、服务提供商网络ID（PLMN））、浏览器类型来为您提供内容展示的最优方式。我们也会为了不断改进和优化上述的功能来使用您的上述个人信息。</p>
+
+                    <h3>（3）购买及支付功能</h3>
+                    <p>当您准备对您选购的商品进行结算或者使用积分兑换商品时，系统会生成相应的订单。您需要在订单中填写您的收货人姓名、收货地址以及手机号码，同时该订单中会载明订单号、您所购买或者兑换的商品或服务信息、您应支付的货款金额及支付方式。</p>
+                    <p>上述所有信息构成您的“订单信息”，我们将使用您的订单信息来进行您的身份核验、确定交易、支付结算、完成配送、为您查询订单以及提供客服咨询与售后服务；我们还会使用您的订单信息来判断您的交易是否存在异常以保护您的交易安全。</p>
+                    <p>在您下单后，您可以选择我们的关联方或与合作的第三方支付机构（包括微信、支付宝支付等支付通道， 以下称“支付机构”）所提供的支付服务。支付功能本身并不收集您的个人信息，但我们需要将您的订单号与交易金额信息与这些支付机构共享以实现其确认您的支付指令并完成支付。“关联方”指一方现在或将来控制、受控制或与其处于共同控制下的任何公司、机构以及上述公司或机构的法定代表人。“控制”是指直接或间接地拥有影响所提及公司管理的能力，无论是通过所有权、有投票权的股份、合同或其他被人民法院认定的方式。</p>
+
+                    <h3>（4）客服与售后功能</h3>
+                    <p>我们的客服和售后功能会使用您的账号信息和订单信息。</p>
+                    <p>为保证您的账号安全，我们的客服会使用您的账号信息与您核验您的身份。当您需要我们提供与您订单信息相关的客服与售后服务时，我们将会查询您的订单信息。您有可能会在与我们的客服人员沟通时，提供给出上述信息外的其他信息，如当您要求我们变更配送地址、联系人或联系电话。</p>
+
+                    <h3>2、改进我们的产品与服务所必须的功能</h3>
+                    <p>我们可能会收集您的订单信息、浏览信息、您的兴趣爱好（您可以在账户设置中选择）进行数据分析以形成用户画像，用来将您感兴趣的内容或服务信息展示给您；或在您搜索时向您展示您可能希望找到的内容。我们还可能为了提供服务及改进服务质量的合理需要而获得的您的其他信息，包括您与客服联系时您提供的相关信息，您参与问卷调查时向我们发送的问卷答复信息，以及您与我们的关联方、我们合作伙伴之间互动时我们获得的相关信息。对于从您的各种设备上收集到的信息，我们可能会将它们进行关联，以便我们能在这些设备上为您提供一致的服务。我们可能会将来自某项服务的信息与来自其他服务的信息结合起来，以便为您提供服务、个性化内容和建议。</p>
+
+                    <h3>3、保障交易安全所必须的功能</h3>
+                    <p>为提高您使用我们的产品与服务时系统的安全性，更准确地预防钓鱼网站欺诈和保护账户安全，我们可能会通过了解您的浏览信息、订单信息、您常用的软件信息、设备信息等手段来判断您的账号风险，并可能会记录一些我们认为有风险的链接（“URL”）；我们也会收集您的设备信息对于系统问题进行分析、统计流量并排查可能存在的风险、在您选择向我们发送异常信息时予以排查。</p>
+
+                    <h3>（二）您可选择是否授权我们收集和使用您的个人信息的情形</h3>
+                    <p>1、为使您使用更便捷或更有乐趣，从而提升您的操作体验，我们的以下附加功能中可能会收集和使用您的个人信息。如果您不提供这些个人信息，您依然可以使用，但您可能无法使用这些可以为您所带来体验乐趣的附加功能。这些附加功能包括：</p>
+                    <p>（1）基于位置信息的个性化推荐功能：我们会收集您的位置信息（我们仅收集您当时所处的地理位置，但不会将您各时段的位置信息进行结合以判断您的行踪轨迹）来判断您所处的地点，自动为您推荐您所在区域的内容或服务。</p>
+                    <p>（2）基于摄像头（相机）的附加功能：您可以使用这个附加功能完成视频拍摄、拍照、扫码等功能。</p>
+                    <p>（3）基于图片上传的附加功能：您可以上传您的照片图片来实现记录保存和发布及评价功能。</p>
+                    <p>（4）基于语音技术的附加功能：您可以直接使用麦克风来进行语音聊天或发布语音内容。</p>
+                    <p>（5）基于通讯录信息的附加功能：我们将收集您的通讯录信息以方便您在使用时不再手动输入您通讯录中联系人的信息（比如您可以直接为通讯录中的电话号码充值）。</p>
+
+                    <p>2、上述附加功能可能需要您在您的设备中向我们开启您的地理位置（位置信息）、相机（摄像头）、相册（图片库）、麦克风以及通讯录的访问权限，以实现这些功能所涉及的信息的收集和使用。您可以在系统设置中逐项查看您上述权限的开启状态，并可以决定将这些权限随时的开启或关闭（我们会指引您在您的设备系统中完成设置）。请您注意，您开启这些权限即代表您授权我们可以收集和使用这些个人信息来实现上述的功能，您关闭权限即代表您取消了这些授权，则我们将不再继续收集和使用您的这些个人信息，也无法为您提供上述与这些授权所对应的功能。您关闭权限的决定不会影响此前基于您的授权所进行的个人信息的处理。</p>
+
+                    <h3>（三）您充分知晓，以下情形中，我们收集、使用个人信息无需征得您的授权同意：</h3>
+                    <p>
+                        1、与国家安全、国防安全有关的；<br>
+                        2、与公共安全、公共卫生、重大公共利益有关的；<br>
+                        3、与犯罪侦查、起诉、审判和判决执行等有关的；<br>
+                        4、出于维护个人信息主体或其他个人的生命、财产等重大合法权益但又很难得到本人同意的；<br>
+                        5、所收集的个人信息是个人信息主体自行向社会公众公开的；<br>
+                        6、从合法公开披露的信息中收集的您的个人信息的，如合法的新闻报道、政府信息公开等渠道；<br>
+                        7、根据您的要求签订合同所必需的；<br>
+                        8、用于维护所提供的产品与/或服务的安全稳定运行所必需的，例如发现、处置产品与/或服务的故障；<br>
+                        9、为合法的新闻报道所必需的；<br>
+                        10、学术研究机构基于公共利益开展统计或学术研究所必要，且对外提供学术研究或描述的结果时，对结果中所包含的个人信息进行去标识化处理的；<br>
+                        11、法律法规规定的其他情形。
+                    </p>
+
+                    <h3>（四）我们从第三方获得您个人信息的情形</h3>
+                    <p>我们可能从第三方获取您授权共享的账户信息（头像、昵称），并在您同意本隐私政策后将您的第三方账户与您的账户绑定，使您可以通过第三方账户直接登录并使用我们的产品与服务。我们会将依据与第三方的约定、对个人信息来源的合法性进行确认后，在符合相关法律和法规规定的前提下，使用您的这些个人信息。</p>
+
+                    <h3>（五）您个人信息使用的规则</h3>
+                    <p>
+                        1、我们会根据本隐私政策的约定并为实现我们的产品与服务功能对所收集的个人信息进行使用。<br>
+                        2、在收集您的个人信息后，我们将通过技术手段对数据进行去标识化处理，去标识化处理的信息将无法识别主体。请您了解并同意，在此情况下我们有权使用已经去标识化的信息；并在不透露您个人信息的前提下，我们有权对用户数据库进行分析并予以商业化的利用。<br>
+                        3、请您注意，您在使用我们的产品与服务时所提供的所有个人信息，除非您删除或通过系统设置拒绝我们收集，否则将在您使用我们的产品与服务期间持续授权我们使用。<br>
+                        4、我们会对我们的产品与服务使用情况进行统计，并可能会与公众或第三方共享这些统计信息，以展示我们的产品与或服务的整体使用趋势。但这些统计信息不包含您的任何身份识别信息。<br>
+                        5、当我们展示您的个人信息时，我们会采用包括内容替换、匿名处理方式对您的信息进行脱敏，以保护您的信息安全。<br>
+                        6、当我们要将您的个人信息用于本政策未载明的其它用途时，或基于特定目的收集而来的信息用于其他目的时，会通过您主动做出勾选的形式事先征求您的同意。
+                    </p>
+                    <h2><i class="fill fill3"></i>我们如何使用 Cookie 和同类技术</h2>
+                    <h3>（一）Cookies的使用</h3>
+                    <p>1、为实现您联机体验的个性化需求，使您获得更轻松的访问体验。我们会在您的计算机或移动设备上发送一个或多个名为Cookies的小数据文件，指定给您的Cookies 是唯一的，它只能被将Cookies发布给您的域中的Web服务器读取。我们向您发送Cookies是为了简化您重复登录的步骤、存储您的购物偏好或您购物车中的商品等数据进而为您提供购物的偏好设置、帮助您优化对广告的选择与互动、帮助判断您的登录状态以及账户或数据安全。</p>
+                    <p>2、我们不会将 Cookies 用于本隐私政策所述目的之外的任何用途。您可根据自己的偏好管理或删除 Cookies。您可以清除计算机上保存的所有 Cookies，大部分网络浏览器会自动接受Cookies，但您通常可根据自己的需要来修改浏览器的设置以拒绝 Cookies；另外，您也可以清除软件内保存的所有Cookies。但如果您这么做，您可能需要在每一次访问时更改用户设置，而且您之前所记录的相应信息也均会被删除，并且可能会对您所使用服务的安全性有一定影响。</p>
+                    <h3>（二）网络Beacon和同类技术的使用</h3>
+                    <p>除 Cookie 外，我们还会在网站上使用网络Beacon等其他同类技术。我们的网页上常会包含一些电子图像（称为"单像素" GIF 文件或 "网络 beacon"）。我们使用网络beacon的方式有：</p>
+                    <p>1、通过在使用网络beacon，计算用户访问数量，并通过访问 cookie 辨认注册的用户。</p>
+                    <p>2、通过得到的cookies信息，为您提供个性化服务。</p>
+
+                    <h2><i class="fill fill3"></i>我们如何共享、转让、公开披露您的个人信息</h2>
+                    <h3>（一）共享</h3>
+                    <p>1、我们不会与本公司以外的任何公司、组织和个人共享您的个人信息，但以下情况除外：</p>
+                    <p>
+                        （1）事先获得您明确的同意或授权；<br>
+                        （2）根据适用的法律法规、法律程序的要求、强制性的行政或司法要求所必须的情况下进行提供；<br>
+                        （3）在法律法规允许的范围内，为维护我们及我们的关联方或合作伙伴、您或其他用户或社会公众利益、财产或安全免遭损害而有必要提供；<br>
+                        （4） 只有共享您的信息，才能实现我们的产品与服务的核心功能或提供您需要的服务；<br>
+                        （5）应您需求为您处理您与他人的纠纷或争议；<br>
+                        （6）符合与您签署的相关协议（包括在线签署的电子协议以及相应的平台规则）或其他的法律文件约定所提供；<br>
+                        （7）基于学术研究而使用；<br>
+                        （8）基于符合法律法规的社会公共利益而使用。
+                    </p>
+                    <p>2、我们可能会将您的个人信息与我们的关联方共享。但我们只会共享必要的个人信息，且受本隐私政策中所声明目的的约束。我们的关联方如要改变个人信息的处理目的，将再次征求您的授权同意。</p>
+                    <p>3、我们可能会向合作伙伴等第三方共享您的信息、账户信息、设备信息以及位置信息，以保障为您提供的服务顺利完成。但我们仅会出于合法、正当、必要、特定、明确的目的共享您的个人信息，并且只会共享提供服务所必要的个人信息。我们的合作伙伴无权将共享的个人信息用于任何其他用途。我们的合作伙伴包括以下类型：</p>
+                    <p>
+                        （1）内容或技术服务的供应商。我们可能会将您的个人信息共享给支持我们功能的第三方。这些支持包括为我们提供基础设施技术服务、支付服务、数据处理等。我们共享这些信息的目的是可以实现我们产品与服务的核心功能，比如我们需要将您的订单号和订单金额与第三方支付机构共享以实现其确认您的支付指令并完成支付等。
+                        （2）第三方商家。我们必须将您的订单信息与交易有关的必要信息与第三方商家共享来实现您向其购买商品或服务的需求，并促使其可以完成后续的售后服务。
+                        （3）委托我们进行推广的合作伙伴。有时我们会代表其他企业向使用我们产品与服务的用户群提供促销推广的服务。我们可能会使用您的个人信息以及您的非个人信息集合形成的间接用户画像与委托我们进行推广的合作伙伴（“委托方”）共享，但我们仅会向这些委托方提供推广的覆盖面和有效性的信息，而不会提供您的个人身份信息，或者我们将这些信息进行汇总，以便它不会识别您个人。比如我们可以告知该委托方有多少人看了他们的推广信息或在看到这些信息后购买了委托方的商品，或者向他们提供不能识别个人身份的统计信息，帮助他们了解其受众或顾客。
+                    </p>
+                    <p>4、对我们与之共享个人信息的公司、组织和个人，我们会与其签署严格的保密协定，要求他们按照我们的说明、本隐私政策以及其他任何相关的保密和安全措施来处理个人信息。为了保障数据在第三方安全可控，我们推出了云鼎服务，在云端提供安全可靠的数据使用和存储环境，确保用户数据的安全性。在个人敏感数据使用上，我们要求第三方采用数据脱敏和加密技术，从而更好地保护用户数据。</p>
+                    <p>5、为了遵守法律、执行或适用我们的使用条件和其他协议，或者为了保护我们、您或其他用户的权利及其财产或安全，比如为防止欺诈等违法活动和减少信用风险，而与其他公司和组织交换信息。不过,这并不包括违反本隐私政策中所作的承诺而为获利目的出售、出租、共享或以其它方式披露的个人信息。</p>
+                    <h3>（二）转让</h3>
+                    <p>我们不会将您的个人信息转让给任何公司、组织和个人，但以下情况除外：</p>
+                    <p>
+                        1、事先获得您明确的同意或授权；<br>
+                        2、根据适用的法律法规、法律程序的要求、强制性的行政或司法要求所必须的情况进行提供；<br>
+                        3、符合与您签署的相关协议（包括在线签署的电子协议以及相应的平台规则）或其他的法律文件约定所提供；<br>
+                        4、在涉及合并、收购、资产转让或类似的交易时，如涉及到个人信息转让，我们会要求新的持有您个人信息的公司、组织继续受本隐私政策的约束，否则,我们将要求该公司、组织重新向您征求授权同意。  
+                    </p>
+                    <h3>（三）公开披露</h3>
+                    <p>我们仅会在以下情况下，且采取符合业界标准的安全防护措施的前提下，才会公开披露您的个人信息：</p>
+
+                    <p>
+                        1、根据您的需求，在您明确同意的披露方式下披露您所指定的个人信息；<br>
+                        2、根据法律、法规的要求、强制性的行政执法或司法要求所必须提供您个人信息的情况下，我们可能会依据所要求的个人信息类型和披露方式公开披露您的个人信息。在符合法律法规的前提下，当我们收到上述披露信息的请求时，我们会要求必须出具与之相应的法律文件，如传票或调查函。我们坚信，对于要求我们提供的信息，应该在法律允许的范围内尽可能保持透明。我们对所有的请求都进行了慎重的审查，以确保其具备合法依据，且仅限于执法部门因特定调查目的且有合法权利获取的数据。在法律法规许可的前提下，我们披露的文件均在加密密钥的保护之下。
+                    </p>
+                    <h2><i class="fill fill3"></i>我们如何保护和保存您的个人信息</h2>
+                    <h3>（一）我们保护您个人信息的技术与措施</h3>
+                    <p>我们非常重视个人信息安全，并采取一切合理可行的措施，保护您的个人信息：</p>
+                    <p>
+                        1、数据安全技术措施<br>
+                        我们会采用符合业界标准的安全防护措施，包括建立合理的制度规范、安全技术来防止您的个人信息遭到未经授权的访问使用、修改,避免数据的损坏或丢失。<br>
+                        我们的网络服务采取了传输层安全协议等加密技术，通过https等方式提供浏览服务，确保用户数据在传输过程中的安全。<br>
+                        采取加密技术对用户个人信息进行加密保存，并通过隔离技术进行隔离。<br>
+                        在个人信息使用时，例如个人信息展示、个人信息关联计算，我们会采用包括内容替换、SHA256在内多种数据脱敏技术增强个人信息在使用中安全性。<br>
+                        采用严格的数据访问权限控制和多重身份认证技术保护个人信息，避免数据被违规使用。<br>
+                        采用代码安全自动检查、数据访问日志分析技术进行个人信息安全审计。
+                    </p>
+                    <p>
+                        2、为保护个人信息采取的其他安全措施<br>
+                        通过建立数据分类分级制度、数据安全管理规范、数据安全开发规范来管理规范个人信息的存储和使用。<br>
+                        通过信息接触者保密协议、监控和审计机制来对数据进行全面安全控制。<br>
+                        建立数据安全委员会并下设信息保护专职部门、数据安全应急响应组织来推进和保障个人信息安全。<br>
+                        安全认证和服务。我们存储您个人数据的云技术取得了相关部门的认证。<br>
+                        加强安全意识。我们还会举办安全和隐私保护培训课程，加强员工对于保护个人信息重要性的认识。<br>
+                    </p>
+
+                    <p>3、我们仅允许有必要知晓这些信息的员工、合作伙伴访问个人信息，并为此设置了严格的访问权限控制和监控机制。我们同时要求可能接触到您个人信息的所有人员履行相应的保密义务。如果未能履行这些义务，可能会被追究法律责任或被中止与我们的合作关系。</p>
+                    <p>4、我们会采取一切合理可行的措施，确保未收集无关的个人信息。我们只会在达成本政策所述目的所需的期限内保留您的个人信息，除非需要延长保留期或受到法律的允许。</p>
+                    <p>5、互联网并非绝对安全的环境，而且电子邮件、即时通讯、社交软件等与其他用户的交流方式无法确定是否完全加密，我们建议您使用此类工具时请使用复杂密码，并注意保护您的个人信息安全。</p>
+                    <p>6、互联网环境并非百分之百安全，我们将尽力确保或担保您发送给我们的任何信息的安全性。如果我们的物理、技术、或管理防护设施遭到破坏，导致信息被非授权访问、公开披露、篡改、或毁坏，导致您的合法权益受损，我们将承担相应的法律责任。</p>
+                    <p>
+                        7、安全事件处置<br>
+                        <span class="kg">空格</span>在通过我们网站与第三方进行网上商品或服务的交易时，您不可避免的要向交易对方或潜在的交易对方披露自己的个人信息，如联络方式或者邮政地址等。请您妥善保护自己的个人信息，仅在必要的情形下向他人提供。<br>
+                        <span class="kg">空格</span>为应对个人信息泄露、损毁和丢失等可能出现的风险，我们制定了多项制度，明确安全事件、安全漏洞的分类分级标准及相应的处理流程。我们也为安全事件建立了专门的应急响应团队，按照安全事件处置规范要求，针对不同安全事件启动安全预案，进行止损、分析、定位、制定补救措施、联合相关部门进行溯源和打击。<br>
+
+                        <span class="kg">空格</span>在不幸发生个人信息安全事件后，我们将按照法律法规的要求，及时向您告知：安全事件的基本情况和可能的影响、我们已采取或将要采取的处置措施、您可自主防范和降低风险的建议、对您的补救措施等。我们同时将及时将事件相关情况以邮件、信函、电话、推送通知等方式告知您，难以逐一告知个人信息主体时，我们会采取合理、有效的方式发布公告。同时，我们还将按照监管部门要求，主动上报个人信息安全事件的处置情况。<br>
+                    </p>
+                    <p>8、如果您对我们的个人信息保护有任何疑问，可通过本政策最下方约定的联系方式联系我们。如您发现自己的个人信息泄密，尤其是您的账户及密码发生泄露，请您立即通过本政策最下方约定的联系方式联络我们，以便我们采取相应措施。</p>
+
+                    <h3>（二）您个人信息的保存</h3>
+                    <p>您的个人信息将全被存储于中华人民共和国境内。</p>
+                    <h2><i class="fill fill3"></i>您如何管理您的个人信息</h2>
+                    <p><span class="kg">空格</span>我们非常重视您对个人信息的关注，并尽全力保护您对于您个人信息访问、更正、删除以及撤回同意的权利，以使您拥有充分的能力保障您的隐私和安全。您的权利包括：</p>
+                    <h3>1、访问和更正您的个人信息</h3>
+                    <p>除法律法规规定外，您有权随时访问和更正您的个人信息，具体包括：</p>
+                    <p>
+                        （1）您的账户信息：您可以在“设置”和“账号管理”页面查阅您提交给我们的所有个人信息，你也可通过上述途径更新除实名认证信息之外的其他个人信息（您的实名认证信息是您通过实名认证时使用的姓名和身份证信息）。<br>
+                        （2）您的浏览信息：您可以访问或清除您的搜索历史记录、查看和修改兴趣以及管理其他数据。<br>
+                        （3）对于您在使用我们的产品与服务过程中产生的其他个人信息需要访问或更正，请随时联系我们。我们会根据本隐私政策所列明的方式和期限响应您的请求。<br>
+                        （4）您无法访问和更正的个人信息：除上述列明的信息外，您的部分个人信息我们还无法为您提供访问和更正的服务，这些信息主要是为了提升您的用户体验和保证交易安全所收集的您的设备信息、您使用附加功能时产生的个人信息。上述信息我们会在您的授权范围内进行使用，您无法访问和更正，但您可联系我们进行删除或做匿名化处理。
+                    </p>
+                    <h3>2、删除您的个人信息</h3>
+                    <p>您在我们的产品与服务页面中可以直接清除或删除的信息，包括订单信息、浏览信息、收货地址信息；</p>
+                    <p>在以下情形中，您可以向我们提出删除个人信息的请求：</p>
+                    <p>
+                        （1）如果我们处理个人信息的行为违反法律法规；<br>
+                        （2）如果我们收集、使用您的个人信息，却未征得您的同意；<br>
+                        （3）如果我们处理个人信息的行为违反了与您的约定；<br>
+                        （4）如果您注销了账户；<br>
+                        （5）如果我们终止服务及运营。
+                    </p>
+                    <p><span class="kg">空格</span>若我们决定响应您的删除请求，我们还将同时通知从我们获得您的个人信息的实体，要求其及时删除，除非法律法规另有规定，或这些实体获得您的独立授权。当您从我们的服务中删除信息后，我们可能不会立即备份系统中删除相应的信息，但会在备份更新时删除这些信息。</p>
+                    <h3>3、改变您授权同意的范围或撤回您的授权</h3>
+                    <p><span class="kg">空格</span>您可以通过删除信息、关闭设备功能、在网站或软件中进行隐私设置等方式改变您授权我们继续收集个人信息的范围或撤回您的授权。您也可以通过注销账户的方式，撤回我们继续收集您个人信息的全部授权。</p>
+                    <p><span class="kg">空格</span>请您理解，每个业务功能需要一些基本的个人信息才能得以完成，当您撤回同意或授权后，我们无法继续为您提供撤回同意或授权所对应的服务，也不再处理您相应的个人信息。但您撤回同意或授权的决定，不会影响此前基于您的授权而开展的个人信息处理。</p>
+                    <h3>4、如果您不想接受我们给您发送的促销信息，您随时可通过以下方式取消：</h3>
+                    <p>
+                        （1）您可通过设置页面的邮件订阅菜单中取消邮件订阅的内容和信息。<br>
+                        （2）您可以随时回复“TD”来取消我们给您发送的手机短信。<br>
+                        （3）您可以通过移动端APP“设置”是否接受我们通过“通知”推动给您的内容和信息<br>
+                        （4）为了保护您的隐私，我们不会以任何方式和途径向您推送涉及宗教信仰、性、疾病等相关敏感内容的促销或商品信息给您。
+                    </p>
+                    <h3>5、响应您的请求</h3>
+                    <p><span class="kg">空格</span>如果您无法通过上述方式访问、更正或删除您的个人信息，或您需要访问、更正或删除您在使用我们产品与服务时所产生的其他个人信息，或您认为我们存在任何违反法律法规或与您关于个人信息的收集或使用的约定，您均可以发送电子邮件至service@ffrj.net或通过本协议下方的其他方式与我们联系。为了保障安全，我们可能需要您提供书面请求，或以其他方式证明您的身份，我们将在收到您反馈并验证您的身份后的30天内答复您的请求。</p>
+                    <p><span class="kg">空格</span>对于您合理的请求，我们原则上不收取费用，但对多次重复、超出合理限度的请求，我们将视情收取一定成本费用。对于那些无端重复、需要过多技术手段（例如，需要开发新系统或从根本上改变现行惯例）、给他人合法权益带来风险或者非常不切实际（例如，涉及备份磁带上存放的信息）的请求，我们可能会予以拒绝。</p>
+                    <p>在以下情形中，按照法律法规要求，我们将无法响应您的请求：</p>
+                    <p>
+                        （1）与国家安全、国防安全有关的；<br>
+                        （2）与公共安全、公共卫生、重大公共利益有关的；<br>
+                        （3）与犯罪侦查、起诉和审判等有关的；<br>
+                        （4）有充分证据表明您存在主观恶意或滥用权利的；<br>
+                        （5）响应您的请求将导致您或其他个人、组织的合法权益受到严重损害的。
+                    </p>
+                    <h2 class="ttq"><i class="fill fill3"></i>未成年人的个人信息保护</h2>
+                    <p>1、我们非常重视对未成年人个人信息的保护。若您是18周岁以下的未成年人，在使用我们的产品与服务前，应事先取得您家长或法定监护人的同意。我们根据国家相关法律法规的规定保护未成年人的个人信息。</p>
+                    <p>2、对于经父母或法定监护人同意而收集未成年人个人信息的情况，我们只会在受到法律允许、父母或监护人明确同意或者保护未成年人所必要的情况下使用或公开披露此信息。</p>
+                    <p>3、如果我们发现自己在未事先获得可证实的父母或法定监护人同意的情况下收集了未成年人的个人信息，则会设法尽快删除相关数据。</p>
+                    <h2><i class="fill fill3"></i>通知和修订</h2>
+                    <p>1、为给您提供更好的服务以及随着我们业务的发展，本隐私政策也会随之更新。但未经您明确同意，我们不会削减您依据本隐私政策所应享有的权利。我们会通过在官方网站、移动端上发出更新版本并在生效前通过网站公告或以其他适当方式提醒您相关内容的更新，也请您访问以便及时了解最新的隐私政策。</p>
+                    <p>2、对于重大变更，我们还会提供更为显著的通知（我们会通过包括但不限于邮件、短信或在浏览页面做特别提示等方式，说明隐私政策的具体变更内容）。</p>
+                    <p>本政策所指的重大变更包括但不限于：</p>
+                    <p>
+                        （1）我们的服务模式发生重大变化。如处理个人信息的目的、处理的个人信息类型、个人信息的使用方式等；<br>
+                        （2）我们在所有权结构、组织架构等方面发生重大变化。如业务调整、破产并购等引起的所有者变更等；<br>
+                        （3）个人信息共享、转让或公开披露的主要对象发生变化；<br>
+                        （4）您参与个人信息处理方面的权利及其行使方式发生重大变化；<br>
+                        （5）我们负责处理个人信息安全的责任部门、联络方式及投诉渠道发生变化时；<br>
+                        （6）个人信息安全影响评估报告表明存在高风险时。
+                    </p>
+                    <p>3、我们还会将本策略的旧版本存档，供您查阅。</p>
+                    <h2><i class="fill fill3"></i>如何联系我们</h2>
+                    <p>1、如您对本隐私政策或您个人信息的相关事宜有任何问题、意见或建议，请通过访问官网、发送邮件至service@ffrj.net等多种方式与我们联系。</p>
+                    <p>2、我们设立了个人信息保护专职部门（或个人信息保护专员），您可以通过发送邮件至service@ffrj.net的方式与其联系。</p>
+                    <p>3、一般情况下，我们将在三十天内回复。如果您对我们的回复不满意，特别是我们的个人信息处理行为损害了您的合法权益，您还可以向网信、电信、公安及工商等监管部门进行投诉或举报。</p>
+                    <p>注：本《隐私政策》版本更新日期为2017年10月1日，将于2017年10月20日正式生效。</p>
+                    <div style="height:1.536rem"></div>
+                </div>
+                <footer>
+                    <ul>
+                        <li style="position: absolute;left: 0.3413rem;top: 0;width: 50%;">
+                            上海盘隆科技有限公司
+                        </li>
+                        <li style="text-align: center;">
+                             <a href="http://www.miitbeian.gov.cn" target="_blank">沪ICP备12018816号-1</a>
+                        </li>
+                        <li style="position: absolute;right: 0.3413rem;top: 0;width: 50%;text-align: right;">粉粉日记©2012-2017</li>
+                    </ul>
+                </footer>
+            </script>
+            <!-- 侵权投诉 -->
+            <script type="text/html" id="agreement1">
+                <div class="helpBox privacy" id="agreementBox">
+                    <h1 style="padding-bottom: 0.64rem"><img src="https://img.fenfenriji.com//ED/56/AF/Image/E77B9F1F-76BF-0F75-20EB-5AB1C50671F0.png" alt="" style="width: 9.3867rem"></h1>
+                    <p>粉粉日记是中立的平台服务提供方，仅为用户发布的内容提供存储空间服务，粉粉日记不对用户发表、转载的内容提供任何形式的保证。任何个人或单位（以下简称“投诉人”）如认为粉粉日记网上存在侵犯自身合法权益的内容，可以按照本《投诉指引》向粉粉日记发起投诉，粉粉日记将根据相关法律法规的规定进行处理。</p>
+                    <h2><i class="fill fill3"></i>投诉流程</h2>
+                    <h3>1．发起投诉：</h3>
+                    <p>投诉人认为粉粉日记网上存在的内容侵犯其合法权益，可按以下要求提交相关关材料进行投诉：</p>
+                    <p>投诉人应向粉粉日记提出书面投诉《粉粉日记侵权投诉表》，内容应包括但不限于以下内容：</p>
+                    <p>（1）投诉人主体信息及相关材料，包括但不限于：</p>
+                    <p>
+                        1）投诉主体姓名/名称（单位/社会团体需同时提供法定代表人姓名) 、联系电话、有效身份证件及编号、Email、通信地址<br>
+                        2）投诉主体有效身份证件复印件，投诉人是个人，如提供的是居民身份证，请提供正反两面复印件；如是其他证件，请提供证件首页和个人页复印件。如投诉人是单位/社会团体等，需要提供投诉主体加盖公章的合法执照复印件。<br>
+                        3）如有代理人，请附加代理人有效身份证件复印件，及投诉人对代理人的有效授权委托书，委托书需要投诉人手写签名或加盖公章。
+                    </p>
+                    <p>（2）投诉事项及投诉请求</p>
+                    <p>投诉人投诉侵权的相关事项详细说明。</p>
+                    <p>（3）投诉人提交的构成侵权的初步证明材料，包括但不限于：</p>
+                    <p>
+                        1）投诉人的权属证明材料：著作权登记证书、商标注册证、专利权证书、合法出版物、创作手稿等能证明权利人拥有相关权利的有效权属证明。
+                        2）被投诉人构成侵权的证明材料：包括但不限于被投诉人发布的帖子侵犯了投诉人的名誉、商誉、隐私、肖像等权利的证据、被投诉人发布的帖子侵犯了投诉人著作权、商标权、专利权等权利的证据材料等。
+                    </p>
+                    <p>（4）投诉人声明</p>
+                    <p>投诉人明确保证：所提供的全部材料真实，对被投诉用户发布内容中存在侵犯权益的指控真实，并承担因要求粉粉日记删除该用户发布的帖子所引起的一切法律后果和连带责任。</p>
+                    <p>投诉人在提供的所有材料上填写日期，并手写签名/加盖公章。</p>
+                    <h3>2．粉粉日记依法处理投诉人的投诉</h3>
+                    <p>粉粉日记在接到投诉人符合法定条件的投诉及材料后，将会根据中国大陆法律法规的规定及时进行处理。</p>
+                    <p>在符合法律要求的前提下，粉粉日记会将投诉人的投诉材料转送给被投诉人。若被投诉人提供证据证明被投诉人未侵犯投诉人合法权益的，粉粉日记亦会按照法律规定进行处理，且在符合法律要求的前提下，粉粉日记会将被投诉人提交的材料转送给投诉人。</p>
+                    <h2><i class="fill fill3"></i>投诉方式</h2>
+                    <p>投诉人将填写完整的前述《粉粉日记侵权投诉表》及其他相关证明材料，清晰拍照或扫描后，发送至粉粉日记官方客服邮箱（service@ffrj.net）提交投诉申请，并等待粉粉日记审核处理。</p>
+
+                    <h2 style="padding-bottom: 0.8533rem">在法律允许的范围内，粉粉日记有权随时更改本《投诉指引》，粉粉日记对本《投诉指引》享有最终解释权。</h2>
+                    <a href="http://d.fenfenriji.com/web/act/privacypolicy/tabttsinfo.doc" target="_blank" download="filename" style="display: block; font-size: 0.6827rem;padding-bottom: 0.7253rem">《粉粉日记侵权投诉表》</a>
+                    <div style="height:1.536rem"></div>
+                </div>
+                <footer>
+                    <ul>
+                        <li style="position: absolute;left: 0.3413rem;top: 0;width: 50%;">
+                            上海盘隆科技有限公司
+                        </li>
+                        <li style="text-align: center;">
+                             <a href="http://www.miitbeian.gov.cn" target="_blank">沪ICP备12018816号-1</a>
+                        </li>
+                        <li style="position: absolute;right: 0.3413rem;top: 0;width: 50%;text-align: right;">粉粉日记©2012-2017</li>
+                    </ul>
+                </footer>
+            </script>
+            <!-- 苹果支付 -->
+            <script type="text/html" id="agreement2">
+                <div class="helpBox privacy" id="agreementBox">
+                    <h1><img src="https://img.fenfenriji.com//ED/56/AF/Image/8D375573-52CB-0841-577F-5AB1C59342DD.png" alt="" style="width: 9.3867rem"></h1>
+                    <p style="padding-top: 1.0667rem">1、进入<span style="font-weight: bold;">App Store</span>，拖到页面最底部。选择“绑定支付宝”或“绑定银联卡支付”，选其一即可。</p>
+                    <img class="img" src="http://app.mall.fenfenriji.com/vip201703/static/img/1.png" alt="">
+                    <p>2、输入Apple ID登录密码。</p>
+                    <img class="img" src="http://app.mall.fenfenriji.com/vip201703/static/img/2.png" alt="">
+                    <p>3、完成相关信息的填写，进行确认</p>
+                    <img class="img" src="http://app.mall.fenfenriji.com/vip201703/static/img/3.png" alt="">
+                    <p>4、返回到“粉粉日记”内，点击“我的”-“会员中心”进行充值。</p>
+                    <div style="height:1.536rem"></div>
+                </div>
+                <footer>
+                    <ul>
+                        <li style="position: absolute;left: 0.3413rem;top: 0;width: 50%;">
+                            上海盘隆科技有限公司
+                        </li>
+                        <li style="text-align: center;">
+                             <a href="http://www.miitbeian.gov.cn" target="_blank">沪ICP备12018816号-1</a>
+                        </li>
+                        <li style="position: absolute;right: 0.3413rem;top: 0;width: 50%;text-align: right;">粉粉日记©2012-2017</li>
+                    </ul>
+                </footer>
+            </script>
+            <!-- 注册条款 -->
+            <script type="text/html" id="agreement3">
+                <div class="helpBox privacy" id="agreementBox">
+                    <h1><img src="https://img.fenfenriji.com//ED/56/AF/Image/6BE8C4BF-B534-52C9-019A-5AB1C602A62C.png" alt="" style="width: 9.3867rem"></h1>
+                    <h2><i class="fill fill3"></i>引言</h2>
+                    <p>欢迎使用本软件提供的各种服务（以下简称“服务”），您同意认可并有义务遵守本《用户协议》（以下简称“协议”）。在本协议中，“用户”是指下载安装运行使用本软件的个人或者单位，申请注册的会员。用户同意此在线协议之效力如同用户亲自签字、盖章的书面条款一样，对用户具有法律约束力。开发者，这里表示上海盘隆科技有限公司，是指对粉粉日记，粉粉社区，可萌记账，粉粉手帐等粉粉系列软件（以下简称“本软件”）拥有著作版权和商标的团体或者单位。用户进一步同意，用户进入软件注册程序即意味着用户同意了本协议的所有内容且只有用户完全同意所有协议并完成注册程序，才能成为软件的正式用户。本协议自用户注册成功之日起在用户与开发者之间产生法律效力。若您不同意本协议，请不要访问网页或使用服务。开发者有权随时更改“协议”，我方建议您事前访问网页以了解是否有所变更。</p>
+                    <h2><i class="fill fill3"></i>服务简介</h2>
+                    <p>开发者向其用户提供包括各个手机平台下的应用软件，游戏，铃声，彩信，设计资源，社区服务，开发者服务，广告等在内的移动互联网技术服务和网络服务。</p>
+                    <br>
+                    <h2><i class="fill fill3"></i>用户身份保证</h2>
+                    <p>（1） 用户承诺并保证自己是具有完全民事行为能力和完全民事权利能力的自然人、法人、实体和组织。用户在此保证所填写的用户信息是真实、准确、完整、及时的，并且没有任何引人误解或者虚假的陈述，且保证开发者可以通过用户所填写的联系方式与用户取得联系。</p>
+                    <p>（2）用户应根据开发者对于相关服务的要求及时提供相应的身份证明等资料，否则开发者有权拒绝向该用户提供相关服务。</p>
+                    <p>（3）用户承诺将及时更新其用户信息以维持该等信息的有效性，并且不侵犯他人权益。<span id="transmark"></span></p>
+                    <p>（4）如果用户提供的资料或信息包含有不正确、不真实的信息，或者对其他用户的正常行为产生干扰，开发者保留取消用户会员资格并随时结束为该用户提供服务的权利。</p>
+                    <p>（5）未经许可，用户的名称、头像、签名等信息，不得侵犯真实注册用户的权益；不得含有未经开发者许可的商业或者广告信息。</p>
+                    <p>（6）以代理人身份代理其他自然人或者单位进行注册的用户必须向开发者提供代理人和被代理人的详细资料和信息及授权书面文件，未向开发者提供上述资料信息及文件的，开发者将视注册者为会员。</p>
+                    <p>（7）用户在本软件中或通过本软件相关服务所传送的任何内容并不反映开发者的观点或政策，开发者对此不承担任何责任。</p>
+                    <br>
+                    <h2><i class="fill fill3"></i>邮件短信通知</h2>
+                    <p>用户充分理解开发者将通过手机短信、电子邮件的方式与注册会员保持联络及沟通，用户在此同意开发者通过手机短信、电子邮件方式向其发送包括会员信息、服务信息在内的相关商业及非商业联络信息。</p>
+                    <br>
+                    <h2><i class="fill fill3"></i>用户的权利和义务</h2>
+                    <p>（1） 用户有权利拥有自己在软件的用户名和密码并有权利使用自己的用户名和密码随时登录开发者的各种服务产品。</p>
+                    <p>（2） 用户有权利享受开发者提供的移动互联网技术和信息服务，并有权利在接受开发者提供的服务时获得开发者的技术支持、咨询等服务，服务内容详见开发者相关产品介绍。</p>
+                    <p>（3） 用户保证不会利用技术或其他手段破坏及扰乱开发者服务产品以及开发者其他客户的网站，不得对软件进行反向工程、反向汇编、反向编译、数据包截获等。</p>
+                    <p>（4） 用户应尊重开发者及其他第三方的知识产权和其他合法权利，并保证在发生上述事件时尽力保护开发者及其股东、雇员、合作伙伴等免于因该等事件受到影响或损失；开发者保留用户侵犯开发者知识产权时终止向该用户提供服务并不退还任何款项的权利。</p>
+                    <p>（5） 对由于用户向开发者提供的联络方式有误以及用户用于接受开发者邮件的电子邮箱安全性、稳定性不佳而导致的一切后果，用户应自行承担责任，包括但不限于因用户未能及时收到开发者的相关通知而导致的后果和损失。</p>
+                    <p>（6） 用户保证其使用开发者服务时将遵从国家、地方法律法规、行业惯例和社会公共道德，不会利用开发者提供的服务进行存储、发布、传播如下信息和内容：违反国家法律法规政策的任何内容（信息）；违反国家规定的政治宣传和/或新闻信息；涉及国家秘密和/或安全的信息；封建迷信和/或淫秽、色情、下流的信息或教唆犯罪的信息；博彩有奖、赌博游戏；违反国家民族和宗教政策的信息；防碍互联网运行安全的信息；侵害他人合法权益的信息和/或其他有损于社会秩序、社会治安、公共道德的信息或内容。用户同时承诺不得为他人发布上述不符合国家规定和/或本服务条款约定的信息内容提供任何便利，包括但不限于设置URL、BANNER链接等。用户承诺其创作行为，评论均属个人行为，不代表开发者立场。用户承认开发者有权在用户违反上述时有权终止向用户提供服务并不予退还任何款项，因用户上述行为给开发者造成损失的，用户应予赔偿。</p>
+                    <p>（7） 用户不应将其帐号、密码转让或出借予他人使用。如因用户提供虚假资料或被他人获悉自己的注册资料而其帐号遭他人非法使用，应立即通知本软件。因黑客行为或用户的保管疏忽导致帐号、密码遭他人非法使用，本软件不承担任何责任。 </p>
+                    <p>（8） 帐号使用权仅属于初始申请注册人，禁止赠予、借用、租用、转让或售卖。如发现使用者并非帐号初始注册人，本软件有权在未经通知的情况下回收该帐号而无需向该帐号使用人承担法律责任，由此带来的包括并不限于用户通讯中断、用户资料清空等损失由用户自行承担。禁止用户私下有偿或无偿转让帐号，以免因帐号问题产生纠纷，用户应当自行承担因违反此要求而遭致的任何损失，同时本软件保留追究上述行为人法律责任的权利。</p>
+                    <br>
+                    <h2><i class="fill fill3"></i>知识产权（商标和版权）</h2>
+                    <p>开发者的logo和名称，开发者的设计上均有开发者的商标或商业外观，未经开发者书面允许不可用于商业用途。所有出现在网页上而不属于开发者的商标其所有权均归各自所有人所有，其所有人不一定与开发者有关联。</p>
+                    <p>开发者的原创性内容，如文本、图案、logo、软件及网页上的所有编排所有权都归开发者和其许可方所有，并受中国、美国和国际版权法保护。未经开发者书面许可不许复制任何开发者的原创内容，“协议”中列出的内容除外。</p>
+                    <br>
+                    <h2><i class="fill fill3"></i>用户原创内容（UGC）知识产权</h2>
+                    <p>（1）用户承诺对其上传或者发表于本软件的所有信息（即属于《中华人民共和国著作权法》规定的作品，包括但不限于文字、图片、音乐、电影、表演、录音录像制品和电脑程序等）均享有完整的知识产权，或者已经得到相关权利人的合法授权。</p>
+                    <p>（2）当第三方认为用户上传或者发表于的信息侵犯其权利，并根据《信息网络传播权保护条例》或者相关法律规定向本软件官方发送权利通知书时，用户同意本软件可以自行判断决定删除涉嫌侵权的用户上传或者发表于本软件的信息，除非收到符合相关法律规定且可以证明本软件不承担任何法律责任的书面说明，本软件将不会自动恢复上述删除的信息，由此给涉嫌侵权的用户带来的任何损失，本软件不承担任何法律责任。</p>
+                    <p>
+                        （3）如用户在使本软件登载的信息或内容侵犯了您的权利，您可以发送通知书至【xxtstudio@163.com】，要求删除该侵权信息或内容。通知书须由权利人或经其合法授权的人亲笔签名，若为单位则还须加盖单位公章。 通知书应当包含下列内容：<br> 
+                        1) 您的姓名（名称）、联系方式、地址、身份证复印件（自然人）、单位登记证明复印件（单位）；<br> 
+                        2) 要求删除内容或信息的准确名称和网络地址，以便能够发现并确认侵权内容； <br> 
+                        3) 认为构成侵权的初步证明材料，包括但不限于对被侵犯对象的权属证明等。 您应对通知书的真实性负责。若通知书的内容不真实，您将承担由此造成的全部法律责任。 <br> 
+                    </p>
+                    <p>
+                      （4）本软件收到您发出的以上通知后会及时对侵犯事实进行核查，核查确认您的侵犯通知书事实无误的情况下，本软件将：<br> 
+                    1) 立即删除涉嫌侵权的内容或信息，并同时将通知书转送作品或内容的提供者； <br> 
+                    2) 除履行通知程序外，对使用同一账号多次上传同一侵权作品的用户，本软件有权不事先通知随时终止该帐号的使用。 <br> 
+                    3) 如用户在使用本软件时违反上述任何规定，本软件有权要求用户改正或直接采取一切必要的措施（包括但不限于删除用户张贴的内容、暂停或终止用户使用网络服务的权利）以减轻用户不当行为而造成的影响。由此给该用户带来的任何损失，本软件不承担任何法律责任。<br>
+                    </p>
+                    <br>
+                     <h2><i class="fill fill3"></i>互联网用户不得制作、复制、发布、传播含有下列内容的信息：</h2>
+                    <p>（1）反对宪法所确定的基本原则的；</p>
+                    <p>（2）危害国家安全，泄露国家秘密，颠覆国家政权，破坏国家统一的；</p>
+                    <p>（3）损害国家荣誉和利益的；</p>
+                    <p>（4）煽动民族仇恨、民族歧视，破坏民族团结的；</p>
+                    <p>（5）破坏国家宗教政策，宣扬邪教和封建迷信的；</p>
+                    <p>（6）散布谣言，扰乱社会秩序，破坏社会稳定的；</p>
+                    <p>（7）散布淫秽、色情、赌博、暴力、凶杀、恐怖或者教唆犯罪的；</p>
+                    <p>（8）侮辱或者诽谤他人，侵害他人合法权益的；</p>
+                    <p>（9）含有法律、行政法规禁止的其他内容的。</p>
+                    <br>
+                    <h2><i class="fill fill3"></i>免责声明 </h2>
+                    <p>（1） 由于您将用户密码告知他人或与他人共享注册账户，由此导致的任何个人信息的泄漏，或其他非因本软件原因导致的个人信息的泄漏，本软件不承担任何法律责任； </p>
+                    <p>（2） 任何第三方根据本软件规则列明的情况使用您的个人信息，由此所产生的纠纷，本软件不承担任何法律责任；</p>
+                    <p>（3） 我们鼓励用户充分利用本软件自由地发布和共享自己的信息。您可以自由发布/上传/共享图片等内容，但您应拥有这些内容的使用权。同时，用户不应在自己的个人主页或社区中发布其他受版权保护的内容。</p>
+                    <p>（4） 用户在本软件发表的内容（包含但不限于本软件目前各产品功能里的内容）仅表明其个人的立场和观点，并不代表本软件的立场或观点。</p>
+                    <p>（5） 用户在本软件发布侵犯他人知识产权或其他合法权益的内容，本软件有权予以删除，并保留移交司法机关处理的权利。</p>
+                    <p>（6） 用户对于其创作并在本软件上发布的合法内容依法享有著作权及其相关权利。</p>
+                    <p>（7） 互联网是一个开放平台，用户将图片等资料上传到互联网上，有可能会被其他组织或个人复制、转载、擅改或做其它非法用途，用户必须充分意识此类风险的存在。用户明确同意其使用本软件服务所存在的风险将完全由其自己承担；因其使用本软件服务而产生的一切后果也由其自己承担，本软件对用户不承担任何法律责任。</p>
+                    <p>（8） 对免责声明的解释、修改及更新权均属于本软件所有。</p>
+                    <br>
+                    <h2><i class="fill fill3"></i>无保证和责任限制</h2>
+                    <p>开发者的网页和服务没有任何明确的、隐晦的或法定的保证或条件。开发者明确表示拒绝承担任何隐含的适用消费保证、特定用途之适用性担保、无侵权担保、信息准确度担保、集成担保、互通性担保或平静受益权担保。</p>
+                    <p>你了解并同意使用本网页和服务，风险自担，你独自承担任何使用移动互联网数据和任何损害的费用。开发者对任何直接的、间接的、特殊的、偶然的、重要的或惩罚性的损害或费用概不负责；损害包括但不限于与使用相关的损害、滥用、无法使用、网页或服务中断、暂停或终止。您对该网页或服务不满意的仅有权利是终止使用网页和服务。</p>
+                    <br>
+                    <h2><i class="fill fill3"></i>不可抗力</h2>
+                    <p>（1） 因不可抗力或者其他意外事件，使得本协议履行不可能、不必要或者无意义的，遭受不可抗力、意外事件的一方不承担责任。</p>
+                    <p>（2） 不可抗力、意外事件是指不能预见、不能克服并不能避免且对一方或双方当事人造成重大影响的客观事件，包括但不限于自然灾害如洪水、地震、瘟疫流行和风暴等以及社会事件如战争、动乱、政府行为等。</p>
+                    <p>（3） 用户同意鉴于互联网的特殊性，黑客攻击、互联网连通中断或者系统故障等属于不可抗力，由此给用户或者第三方造成的损失不应由开发者承担。</p>
+                    <h3>本条款的最终解释权归上海盘隆科技有限公司所有。</h3>
+                    <div style="height:1.536rem"></div>
+                </div>
+                <footer>
+                    <ul>
+                        <li style="position: absolute;left: 0.3413rem;top: 0;width: 50%;">
+                            上海盘隆科技有限公司
+                        </li>
+                        <li style="text-align: center;">
+                             <a href="http://www.miitbeian.gov.cn" target="_blank">沪ICP备12018816号-1</a>
+                        </li>
+                        <li style="position: absolute;right: 0.3413rem;top: 0;width: 50%;text-align: right;">粉粉日记©2012-2017</li>
+                    </ul>
+                </footer>
+            </script>
+            <!-- 社区公约 -->
+            <script type="text/html" id="agreement4">
+                <div class="helpBox privacy" id="agreementBox">
+                    <h1><img src="https://img.fenfenriji.com//ED/56/AF/Image/317BC33F-73ED-E0AA-EC6C-5AB1C620313B.png" alt="" style="width: 9.3867rem"></h1>
+                    <h2><i class="fill fill3"></i>粉粉初衷</h2>
+                    <p>在粉粉，你可以畅所欲言，八卦，娱乐，情感星座，一句吐槽，一个签到打卡等等我们都欢迎。</p>
+                    <p>用户的分享与交流是粉粉存在的意义，当然你也要学会聆听各种声音，包容不一样的观点和言论。尊重他人，不使用网络暴力。</p>
+                    <h2><i class="fill fill3"></i>粉粉禁止</h2>
+                    <p>
+                        1.违反我国法律法规的行为和内容（详情参照①）。<br>
+                        2.发布以金钱盈利为目的的广告/刷粉/兼职/出租账号/刷经验等内容。<br>
+                        3.使用色情暴力等不雅词汇进行人身攻击，故意骚扰行为。<br>
+                        4.对粉粉运营安全有潜在威胁的内容。<br>
+                        5.恶意刷屏、冒充其他用户、严重侵犯他人权益。<br>
+                        如有以上行为之一，用户账号将删除所有违禁消息并永久停用！
+                    </p>
+                    <h2><i class="fill fill3"></i>对于以下违规内容，粉粉日记将予以重点打击处理：</h2>
+                    <p>1. 违法信息：是指违背《中华人民共和国宪法》和《全国人大常委会关于维护互联网安全的决定》、《互联网信息服务管理办法》所明文严禁的信息以及其它法律法规明文禁止传播的各类信息。</p>
+                    <p>《互联网信息服务管理办法》所严禁的九类信息是：</p>
+                    <p>
+                        （一）反对宪法所确定的基本原则的；<br>
+                        （二）危害国家安全，泄露国家秘密，颠覆国家政权，破坏国家统一的；<br>
+                        （三）损害国家荣誉和利益的；<br>
+                        （四）煽动民族仇恨、民族歧视，破坏民族团结的；<br>
+                        （五）破坏国家宗教政策，宣扬邪教和封建迷信的；<br>
+                        （六）散布谣言，扰乱社会秩序，破坏社会稳定的；<br>
+                        （七）散布淫秽、色情、赌博、暴力、凶杀、恐怖或者教唆犯罪的；<br>
+                        （八）侮辱或者诽谤他人，侵害他人合法权益的；<br>
+                        （九）含有法律、行政法规禁止的其它内容的。<br>
+                    </p>
+                    <p>2. 不良信息：不良信息是指违背社会主义精神文明建设要求、违背中华民族优良文化传统与习惯以及其它违背社会公德的各类信息，包括文字、图片、音视频等等。</p>
+                    <p>3. 淫秽信息：是指在整体上宣扬淫秽行为，具有下列内容之一，挑动人们性欲，导致普通人腐化、堕落，而又没有艺术或科学价值的文字、图片、音频、视频等信息内容，包括：</p>
+                    <p>
+                        （1）淫亵性地具体描写性行为、性交及其心理感受；<br>
+                        （2）宣扬色情淫荡形象；<br>
+                        （3）淫亵性地描述或者传授性技巧；<br>
+                        （4）具体描写乱伦、强奸及其它性犯罪的手段、过程或者细节，可能诱发犯罪的；<br>
+                        （5）具体描写少年儿童的性行为；<br>
+                        （6）淫亵性地具体描写同性恋的性行为或者其它性变态行为，以及具体描写与性变态有关的暴力、虐待、侮辱行为；<br>
+                        （7）其它令普通人不能容忍的对性行为淫亵性描写。<br>
+                    </p>
+                    <p>色情信息是指在整体上不是淫秽的，但其中一部分有上述中1至7的内容，对普通人特别是未成年人的身心健康有毒害，缺乏艺术价值或者科学价值的文字、图片、音频、视频等信息内容。</p>
+                    <h2><i class="fill fill3"></i>短视频上传须知</h2>
+                    <p>1. 使用人群：粉粉达人（之后版本会放宽用户准入）。</p>
+                    <p>2. 短视频大小及时长：</p>
+                    <p>
+                        （1）视频大小≤500M；<br>
+                        （2）时间≤5分钟；<br>
+                    </p>
+                    <p>3. 数量限制：每个用户每日发送视频总数不超过10个。</p>
+                    <p>4. 短视频的审核：</p>
+                    <p>
+                        （1）短视频上传后，将进入排队审核列表。<br>
+                        （2）审核期内短视频将显示在个人主页，仅本人可见，附有“审核中”的提示。<br>
+                        （3）审核成功后，短视频将发布于社区公开可见，发布时间为审核成功时间。<br>
+                        （4）若审核失败，将删除该条点滴，发布用户将收到一条“内容审核失败”的私信。<br>
+                    </p>
+                     <p>5. 注意事项：短视频内容如触犯到《粉粉日记社区公约》内禁止及违规内容，将根据不同程度给予删除点滴、禁言、封禁账号等处分操作。</p>
+                     <h3>即日起粉粉日记将基于以上范围和标准加强对违法信息的处置，欢迎用户进行举报监督，共同维护粉粉日记秩序。</h3>
+                    <div style="height:1.536rem"></div>
+                </div>
+                <footer>
+                    <ul>
+                        <li style="position: absolute;left: 0.3413rem;top: 0;width: 50%;">
+                            上海盘隆科技有限公司
+                        </li>
+                        <li style="text-align: center;">
+                             <a href="http://www.miitbeian.gov.cn" target="_blank">沪ICP备12018816号-1</a>
+                        </li>
+                        <li style="position: absolute;right: 0.3413rem;top: 0;width: 50%;text-align: right;">粉粉日记©2012-2017</li>
+                    </ul>
+                </footer>
+            </script>
+            <!-- 会员协议 -->
+            <script type="text/html" id="agreement5">
+                <div class="helpBox privacy" id="agreementBox">
+                    <h1><img src="https://img.fenfenriji.com//ED/56/AF/Image/30932629-F6C2-D605-A74A-5AB1C61359D4.png" alt="" style="width: 9.3867rem"></h1>
+                    <h2><i class="fill fill3"></i>特别提示</h2>
+                    <div class="text">
+                        <p><span class="kg">空格</span> 上海盘隆科技有限公司旗下手机应用粉粉日记（以下简称“粉粉日记”）在此特别提醒您，在您注册并付费成为粉粉日记会员之前，请认真阅读本《粉粉日记会员服务条款》（以下简称“服务条款”），确保您充分理解服务条款中各条款，包括免除粉粉日记责任的条款及限制会员权利的条款。请您审慎阅读并选择接受或不接受本服务条款。除非您接受本服务条款所有条款，否则您不得注册登录或使用本服务条款所涉服务。您的注册、登录、付费、使用等行为将视为对本服务条款的接受，并同意接受本服务条款各项条款的约束。</p>
+                        
+                        <p><span class="kg">空格</span> 本服务条款约定粉粉日记与您之间关于“粉粉日记会员”服务的各项事项。“会员”是指注册、登录、付费，使用本服务条款中粉粉日记提供的会员服务的个人或公司企业法人以及其他组织。粉粉日记会员服务是有偿的增值服务，会员必须完全同意本服务条款，并完成付费，才能享受相关服务。</p>
+                        <p><span class="kg">空格</span> 本服务条款是基于“粉粉日记”软件的《用户协议》而制定，是其不可分割的一部分。同时，粉粉日记不定期发布的关于会员服务的各种规范、规则等也是本服务条款不可分割的一部分。您选择接受本服务条款，开通会员服务成为会员用户，即表示您同意接受并遵守本服务条款、《用户协议》及各种规范、规则的各项约束。如果您不接受本服务条款，则不能享受本服务条款所涉会员服务。</p>
+                        <p><span class="kg">空格</span> 本服务条款可由粉粉日记随时不定期更新，更新后的服务条款一旦公布即代替原服务条款，粉粉日记恕不再另行通知，用户可在本页面查阅最新版的服务条款。</p>
+                    </div>
+                    <h2><i class="fill fill3"></i>总则</h2>
+                    <div class="text">
+                        <p>1、粉粉日记是由上海盘隆科技独立自主研发并运行维护的一款手机应用程序。</p>
+                        <p>2、粉粉日记用户是指使用粉粉日记手机应用软件，愿意接受粉粉日记《用户协议》并在粉粉日记相关使用规范的规定下使用粉粉日记的用户。</p>
+                        <p>3、粉粉日记会员服务是粉粉日记为粉粉日记用户提供的有偿增值服务，用户向粉粉日记支付相关费用后，方可享受专门为会员提供的各项服务。</p>
+                        <p>4、粉粉日记会员必须遵守粉粉日记《用户协议》及本服务条款。</p>
+                    </div>
+                    <h2><i class="fill fill3"></i>服务费用</h2>
+                    <div class="text">
+                        <p>1、会员资格以自然月为单位计算（即本月开通日起至下月此日止，例如本月10号11点整开通的一个月会员服务至下月10号11点整到期），会员服务费用标准为12元/月，用户应通过一次性支付的方式购买会员服务。粉粉日记将根据购买数量及安卓和iOS操作系统不同略有差异，或提供用户不同幅度的优惠，具体请以实际会员资格支付页面显示为准。</p>
+                        <p>2、粉粉日记可以根据实际情况随时调整会员服务费用标准，经调整的会员服务费用标准将在会员资格支付页上显示，用户按调整后的服务费用标准支付后方可享有或延续会员资格。已按原会员服务费用标准购买会员服务的用户，其会员资格以及所享有的会员服务在已取得的会员资格期限内不受影响，无需补充缴纳差额。以明显不合理费用获得会员服务的，粉粉有权根据实际情况进行处理。</p>
+                    </div>
+                    <h2><i class="fill fill3"></i>服务内容</h2>
+                    <div class="text">
+                        <p>1、粉粉日记将为会员提供多种专享的增值服务，具体内容将在会员页面显示。</p>
+                        <p>2、粉粉日记可以根据实际情况随时调整会员服务内容。</p>
+                    </div>
+                    <h2><i class="fill fill3"></i>服务的开通和终止</h2>
+                    <div class="text">
+                        <p>1、粉粉日记用户完成用户注册程序，并通过粉粉日记平台提供的付费途径完成会员费用的支付后，即取得粉粉日记会员资格。</p>
+                        <p>2、粉粉日记用户通过粉粉日记平台完成会员注册，所提交的内容与个人资料必须真实有效。当会员的个人资料发生变化时，会员应及时修改注册的个人资料，否则由此造成的会员权利不能全面有效行使或其他任何后果、责任由会员自行承担。</p>
+                        <p>3、会员资格有效期自粉粉日记会员服务开通之时起算，具体期限可以登录粉粉日记客户端“会员中心”页查看。</p>
+                        <p>4、会员资格有效期届满后，粉粉日记将终止向该用户提供会员增值服务，该用户可以通过续交会员服务费用延续会员资格。</p>
+                        <p>5、会员在会员资格有效期内续费，会员资格有效期将在原有效期基础上相应延长。</p>
+                    </div>
+                    <h2><i class="fill fill3"></i>会员的权利和义务</h2>
+                    <div class="text">
+                        <p>1、粉粉日记会员平等享有会员的权利，同时应遵守粉粉日记的各项规范、规则，包括但不限于本服务条款和《用户协议》。</p>
+                        <p>2、因违反粉粉日记《用户协议》而导致粉粉账号被封禁或删除，粉粉账号经验和等级被扣除，会员服务被停止使用等的相关损失，由用户自行承担。</p>
+                        <p>3、会员在会员资格有效期内可以享受粉粉日记会员的各项增值服务。</p>
+                        <p>4、如会员在会员资格有效期内主动终止或取消会员资格，粉粉日记不负责退还与该会员剩余会员资格有效期对应的服务费用。</p>
+                        <p>5、会员自行承担在粉粉日记中传送、发布信息及使用粉粉日记免费服务或收费服务的法律责任，会员使用粉粉日记服务，包括免费服务与收费服务的行为，均应遵守各项法律法规、规章、规范性文件（以下简称“法律法规”）。</p>
+                    </div>
+                    <h2><i class="fill fill3"></i>粉粉日记的权利和义务</h2>
+                    <div class="text">
+                        <p>1、粉粉日记有义务保证遵守本服务条款、粉粉日记《用户协议》及各项规范、规则的会员正常使用会员服务，当出现技术故障影响会员服务的正常提供时，粉粉日记应尽快排除故障，但对于会员因此产生的任何损失，粉粉日记不承担责任。</p>
+                        <p>2、粉粉日记在未经会员授权时，不得公开、编辑或透露会员注册及保存的非公开信息，但法律法规明确规定及《用户协议》约定的情形除外。</p>
+                        <p>3、粉粉日记将通过粉粉日记系统对会员进行通知和公告。</p>
+                        <p>4、因不可抗力造成会员服务提供的中断或其它缺陷，粉粉日记不承担任何责任，但将尽力减少因此给会员造成的损失和影响。</p>
+                        <p>5、因会员原因造成的粉粉日记帐号密码泄露，粉粉日记不承担责任，同时为避免粉粉日记帐号被盗用后滥用而引起法律风险，粉粉日记可以在用户举报该情形后采取一切措施避免第三方对用户的会员帐号实施操作行为，而不论该第三方基于何种目的、获取方式是否善意。</p>
+                        <p>6、如会员在使用粉粉日记免费服务或收费服务的过程中，故意进行有损粉粉日记、粉粉日记平台、其他粉粉日记用户合法权益的行为，或存在《用户协议》约定的相关情形，粉粉日记有权封禁或删除该粉粉账号，扣除粉粉账号经验和等级，取消会员资格或中断一项或多项会员服务而无须给予任何补偿，并保留追究该会员法律责任的权利。</p>
+                        <p>7、如会员在使用粉粉日记免费服务或收费服务的过程中，存在违反法律法规的行为，粉粉日记有权取消该会员的会员资格而无须给予任何补偿，且该会员须自行承担全部责任。</p>
+                        <p>8、如果用户利用粉粉日记会员购买存在的漏洞（官方无意的漏洞、问题或软件bug，通过黑客方式造成的漏洞），以低于官方标价的价格或者免费获得了会员资格，粉粉日记有权无条件收回通过漏洞获取的会员资格，但不影响用户正常购买的会员资格。</p>
+                    </div>
+                    <h2><i class="fill fill3"></i>其他</h2>
+                    <div class="text">
+                        <p>1、粉粉日记不定期发布的关于会员服务的规范、规则等，是本服务条款不可分割的一部分。</p>
+                        <p>2、如本服务条款与《用户协议》发生冲突或本服务条款无规定时，应以《用户协议》的规定为准。</p>
+                        <p>3、本服务条款的解释，效力及纠纷的解决，适用中华人民共和国法律。若会员和粉粉日记之间发生任何纠纷或争议，首先应友好协商解决，协商不成的，会员同意将纠纷或争议提交粉粉日记所在地人民法院提起诉讼。</p>
+                        <p>4、本服务条款的版权由粉粉日记所有，粉粉日记保留一切解释和修改的权利。</p>
+                        <p>5、粉粉日记可依照粉粉日记发展的不同阶段，随着管理经验的不断丰富，出于维护粉粉日记会员秩序的目的，不断完善本服务条款。</p>
+                    </div>
+                    <div style="height:1.536rem"></div>
+                </div>
+                <footer>
+                    <ul>
+                        <li style="position: absolute;left: 0.3413rem;top: 0;width: 50%;">
+                            上海盘隆科技有限公司
+                        </li>
+                        <li style="text-align: center;">
+                             <a href="http://www.miitbeian.gov.cn" target="_blank">沪ICP备12018816号-1</a>
+                        </li>
+                        <li style="position: absolute;right: 0.3413rem;top: 0;width: 50%;text-align: right;">粉粉日记©2012-2017</li>
+                    </ul>
+                </footer>
+            </script>
+            <!-- 协议模板 end -->
+
+            <script id="mobJS"></script>
+        </div>
+         <div id=upgrade style="text-align: center;padding-top: 250px;display: none">您正在使用的浏览器版本过低，将不能正常浏览和使用~</div>
+             <script id="a2"></script>
+         </body>
+         <script type=text/javascript>
+            if(navigator.appName == "Microsoft Internet Explorer" && navigator.appVersion .split(";")[1].replace(/[ ]/g,"")=="MSIE6.0" || navigator.appName == "Microsoft Internet Explorer" && navigator.appVersion .split(";")[1].replace(/[ ]/g,"")=="MSIE7.0" || navigator.appName == "Microsoft Internet Explorer" && navigator.appVersion .split(";")[1].replace(/[ ]/g,"")=="MSIE8.0" || navigator.appName == "Microsoft Internet Explorer" && navigator.appVersion .split(";")[1].replace(/[ ]/g,"")=="MSIE9.0" || navigator.appName == "Microsoft Internet Explorer" && navigator.appVersion .split(";")[1].replace(/[ ]/g,"")=="MSIE10.0")
+            {
+                document.getElementById('app').style.display = 'none'
+                document.getElementById('upgrade').style.display = 'block'
+            }
+        </script>
+    </html>
+         <script>
+            function IsPC() {
+                var userAgentInfo = navigator.userAgent;
+                var Agents = ["Android", "iPhone",
+                    "SymbianOS", "Windows Phone",
+                    "iPad", "iPod"];
+                var flag = true;
+                for (var v = 0; v < Agents.length; v++) {
+                    if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                        flag = false;
+                        break;
+                    }
+                }
+                return flag;
+            }
+            
+            if (!IsPC()) {
+                var hash = window.location.hash
+                if (hash === '#/joinUs' || hash === '#/help' || hash === '#/aboutUs' || hash === '#/privacy') {
+                    window.location.hash = ''
+                }
+                trackEvent('isMob')
+                $('#app').hide()
+                $('#mobile').show()
+                document.getElementById('mobCss').href = 'https://d.fenfenriji.com/pink/static_v3/css/mbindex.css?v=2'
+                document.getElementById('mobJS').src = 'https://d.fenfenriji.com/pink/static_v3/js/mbindex.js?v=2'
+
+            } else {
+                var hash = window.location.hash
+                if (hash === '#join0' || hash === '#join1' || hash === '#join2' || hash === '#join3' || hash === '#join4' || hash === '#help0' || hash === '#help1' || hash === '#help2' || hash === '#help3' || hash === '#agreement0' || hash === '#agreement1' || hash === '#agreement2' || hash === '#agreement3' || hash === '#agreement4' || hash === '#agreement5') {
+                    window.location.hash = ''
+                }
+                trackEvent('isPC')
+                $('#app').show()
+                $('#mobile').hide()
+                document.getElementById('a2').src = 'https://d.fenfenriji.com/pink/static_v3/js/vendor.js'
+                document.getElementById('pcCss').href = 'https://d.fenfenriji.com/pink/static_v3/css/app.css'
+            }
+
+        </script>
+        <script>
+        </script>
