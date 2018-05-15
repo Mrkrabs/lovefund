@@ -1,103 +1,488 @@
 <html>
+<head>
+<title>恋爱基金</title>
+
+
 <style>
-.index {
-    position: relative;
-    min-height: calc(100% - 67px);
-    display: flex;
-    flex-direction: column-reverse;
-}
-.index .curtain {
-    height: calc(100% - 200px);
-    position: absolute;
-    top: 0;
-    z-index: 999;
-}
-.index footer {
-    position: absolute;
-    width: 100%;
-    height: 250px;
-    left: 0;
-    bottom: 0;
-}
-.index footer>div:first-child {
-    background: url(http://d.fenfenriji.com/pink/static_v1/images/des.png);
-    background-size: 100% 100%;
-}
-.index footer>div img.a1 {
-    width: 90px;
-    top: -60px;
-    left: 0;
-}
-.index footer>div img {
-    z-index: 999999999;
-    display: block;
-    position: absolute;
-}
-.index footer>div img.a2 {
-    width: 60px;
-    top: 35px;
-    left: 110px;
-}
-.index footer>div img.a3 {
-    width: 35px;
-    top: 5px;
-    left: 190px;
-}
-.index footer>div img.a4 {
-    width: 70px;
-    top: -10px;
-    left: 240px;
-}
-.index footer>div img.a8 {
-    width: 400px;
-    bottom: 35px;
-    right: 80px;
-}
-.index footer>div img.a9 {
-    width: 60px;
-    right: 140px;
-    top: -107px;
-}
+	.headerTitle{
+		position: absolute;
+	    left: 50px;
+	    font-size: 24px;
+	    font-weight: bold;
+	    color: #d0b3fb;
+	}
+	.index {
+	    position: relative;
+	    min-height: calc(100% - 67px);
+	    display: flex;
+	    flex-direction: column-reverse;
+	}
+	.index .curtain {
+	    height: calc(100% - 200px);
+	    position: absolute;
+	    top: 0;
+	    z-index: 999;
+	}
+	.index footer {
+	    position: absolute;
+	    width: 100%;
+	    height: 250px;
+	    left: 0;
+	    bottom: 0;
+	}
+	.index footer>div:first-child {
+	    background: url(http://d.fenfenriji.com/pink/static_v1/images/des.png);
+	    background-size: 100% 100%;
+	}
+	.index footer>div img.a1 {
+	    width: 90px;
+	    top: -60px;
+	    left: 0;
+	}
+	.index footer>div img {
+	    z-index: 999999999;
+	    display: block;
+	    position: absolute;
+	}
+	.index footer>div img.a2 {
+	    width: 60px;
+	    top: 35px;
+	    left: 110px;
+	}
+	.index footer>div img.a3 {
+	    width: 35px;
+	    top: 5px;
+	    left: 190px;
+	}
+	.index footer>div img.a4 {
+	    width: 70px;
+	    top: -10px;
+	    left: 240px;
+	}
+	.index footer>div img.a8 {
+	    width: 400px;
+	    bottom: 35px;
+	    right: 80px;
+	}
+	.index footer>div img.a9 {
+	    width: 60px;
+	    right: 140px;
+	    top: -107px;
+	}
 
-.index footer>div img.a10 {
-    width: 120px;
-    right: 0;
-    top: 15px;
-}
-.index footer>div:nth-child(2) {
-    background-color: #f4bd7f;
-}
-#app, header {
-    position: relative;
-}
-#app, body, html {
-    height: 100%;
-    min-width: 1000px;
-}
-body, html {
-    width: 100%;
-    font-family: PingFangSC-Regular;
-}
+	.index footer>div img.a10 {
+	    width: 120px;
+	    right: 0;
+	    top: 15px;
+	}
+	.index footer>div:nth-child(2) {
+	    background-color: #f4bd7f;
+	}
+	#app, header {
+	    position: relative;
+	}
+	#app, body, html {
+	    height: 100%;
+	    min-width: 1000px;
+	}
+	body, html {
+	    width: 100%;
+	    font-family: PingFangSC-Regular;
+	}
 
-body {
-    line-height: 1.2;
-}
-body, html {
-    width: 100%;
-    font-family: PingFangSC-Regular;
-}
-body {
-    display: block;
-    margin: 0;
-}
-header {
-    width: 100%;
-    height: 100px;
-    padding-bottom: 15px!important;
-    background: hsla(0,0%,100%,0) url(http://d.fenfenriji.com/pink/static_v1/images/topbar.png)!important;
-    background-size: auto 100%!important;
-    z-index: 99999999;
-}
+	body {
+	    line-height: 1.2;
+	}
+	body, html {
+	    width: 100%;
+	    font-family: PingFangSC-Regular;
+	}
+	body {
+	    display: block;
+	    margin: 0;
+	}
+	header {
+	    /* width: 100%; */
+	    /* height: 100px; */
+	    /* padding-bottom: 15px!important; */
+	    background: hsla(0,0%,100%,0) url(http://d.fenfenriji.com/pink/static_v1/images/topbar.png)!important;
+	    background-size: auto 100%!important;
+	    z-index: 99999999;
+	    /* line-height: 65px; */
+	    padding: 20px 50px 70px 50px;
+	    text-align: right;
+	}
+	.clearfix{
+		margin-top: -48px; 
+		width: 100%; 
+		background-image: linear-gradient(-180deg, rgb(178, 221, 249) 0%, rgb(227, 242, 249) 100%);
+	}
+	.content{
+		position: absolute;
+	    top: 50%;
+	    left: 50%;
+	    margin-left: -250px;
+	    margin-top: -250px;
+	    text-align: center;
+	}
+	.nav{
+		display: inline-block;
+	    width: 70px;
+	    text-align: center;
+	    border-right: 1px solid #ccc;
+	    height: 20px;
+	    cursor: pointer;
+	}
+	.last{
+		border: 0;
+	}
+	.bounced{
+	    height: 500px;
+	    width: 500px;
+	    padding-top: 20px;
+	    position: relative;
+	}
+	.top-up{
+		display: none;
+	}
+	.cash{
+		display: none;
+	}
+	.input{
+		display: inline-block;
+    	border: 1px solid #fbd8d4;
+    	border-radius: 8px;
+    	height: 30px;
+	    width: 220px;
+	    padding: 3px 12px;
+	    margin-top: 20px;
+	}
+	.registered{
+		margin-left: 170px;
+	    font-size: 10px;
+	    margin-top: 5px;
+	    display: inline-block;
+	    cursor: pointer;
+	}
+	.mb20{
+		margin-bottom: 20px;
+	}
+	.button{
+		border: 0;
+	    background-image: linear-gradient(-81deg,#ffba95,#fe9aad 98%);
+	    color: #fff;
+	    width: 100px;
+	    height: 36px;
+	    line-height: 36px;
+	    font-size: 15px;
+	    letter-spacing: 0;
+	    cursor: pointer;
+	    display: inline-block;
+	    border-radius: 8px;
+	}
+	.title{
+		font-size: 20px;
+		display: inline-block;
+	}
+	.Box{
+		position: absolute;
+	    background-color: #ffba95;
+	    height: 285px;
+	    width: 400px;
+	    top: 50px;
+	    left: 50px;
+	    text-align: center;
+	    border: 1px solid #fe9aad;
+	    border-radius: 5px;
+	    padding-top: 40px;
+	}
+	.Box .shut{
+		position: absolute;
+	    top: 5px;
+	    right: 5px;
+	    line-height: 15px;
+	    cursor: pointer;
+	}
+	.query{
+		/*display: none;*/
+	}
+	.top-up{
+		display: none;
+	}
+	.cash{
+		display: none;
+	}
+	.registeredBox{
+		display: none;    
+		height: 250px;
+    	top: -30px;
+     	padding-top: 20px;
+	}
+	.queryBox{
+		display: none;
+	}
+	.top-upBox{
+		display: none;
+	}
+	.cashBox{
+		display: none;
+	}
+	.w150{
+		width: 150px;
+	}
+	.bfe2f9{
+		background-image: linear-gradient(-81deg,#FFBAFF,#fe9aad 98%);
+	}
+	.registeredBox input{
+     	margin-bottom: 20px;
+    	margin-top: 0;
+	}
 </style>
-<head></head><body><div id="app"><header style="padding-bottom: 15px;"></header> <div class="index clearfix" style="margin-top: -48px; width: 100%; background-image: linear-gradient(-180deg, rgb(178, 221, 249) 0%, rgb(227, 242, 249) 100%);"><img src="https://d.fenfenriji.com/pink/static_v1/images/curtain-left.png" alt="" class="curtain" style="left: 0px;"> <img src="https://d.fenfenriji.com/pink/static_v1/images/curtain-right.png" alt="" class="curtain" style="right: 0px;">  <footer><div style="position: relative; width: 100%; height: 190px;"><img src="https://d.fenfenriji.com/pink/static_v1/images/book.png" alt="" class="a1"> <img src="https://d.fenfenriji.com/pink/static_v1/images/coffee.png" alt="" class="a2"> <img src="https://d.fenfenriji.com/pink/static_v1/images/brushpot.png" alt="" class="a3"> <img src="https://d.fenfenriji.com/pink/static_v1/images/calendar.png" alt="" class="a4">  <img src="https://d.fenfenriji.com/pink/static_v1/images/cat.png" alt="" class="a8"> <img src="https://d.fenfenriji.com/pink/static_v1/images/cactus.png" alt="" class="a9"> <img src="https://d.fenfenriji.com/pink/static_v1/images/picture.png" alt="" class="a10"></div> <div style="height: 60px; line-height: 60px;"></div></footer></div></div>
-</body></html>
+</head>
+<body>
+	<div id="app">
+		<header>
+			<span class="headerTitle">恋爱基金</span>
+			<span class="nav queryNav" data="query">查询</span> 
+			<span class="nav top-upNav" data="top-up">存入</span> 
+			<span class="nav last cashNav" data="cash">取出</span> 
+		</header> 
+		<div class="index clearfix">
+			<div class="content">
+				<div class="bounced">
+
+					<div class="title query">查询</div>
+					<div class="title top-up">存入</div>
+					<div class="title cash">取出</div><br>
+
+					<input id="account" class="input" type="text" placeholder="请输入完整钱包信息"/><br>
+					<span class="registered">生成新的钱包</span><br>
+					<input id="password" class="input mb20" type="password" placeholder="请输入密码"/><br>
+
+					<span class="button query" data="query">查询</span>
+					<span class="button top-up" data="top-up">存入</span>
+					<span class="button cash" data="cash">取出</span>
+
+					<!-- 注册弹框 -->
+					<div class="Box registeredBox">
+						<span class="queryBoxShut shut">X</span>
+						<p>新建钱包</p>
+						
+						<input id="registeredPassword1" class="input w150" type="password" placeholder="请输入密码"><br>
+						<input id="registeredPassword2" class="input w150" type="password" placeholder="请再次输入密码"><br>
+						<span id="registered" class="button bfe2f9">新建</span>
+					</div>
+
+					<!-- 查询弹框 -->
+					<div class="Box queryBox">
+						<span class="queryBoxShut shut">X</span>
+						<p>查询成功</p>
+						<p>剩余金额：<span class="queryData">200</span>币</p>
+					</div>
+
+					<!-- 充值弹框 -->
+					<div class="Box top-upBox">
+						<span class="top-upBoxShut shut">X</span>
+						<p>恋爱宣言：<input class="input w150" type="text" name="" placeholder="请输入恋爱宣言"></p>
+						<p>存入币数：<input class="input w150" type="text" name="" placeholder="请输入币数"></p>
+						<p>分享给另一半：<input class="input w150" type="text" name="" placeholder="请输入另一半的账户地址"></p>
+						<span class="button top-up bfe2f9" data="top-up">存入</span>
+					</div>
+
+					<!-- 取现弹框 -->
+					<div class="Box cashBox">
+						<span class="cashBoxShut shut">X</span>
+						<p>取现币数：<input class="input w150" type="text" name="" placeholder="请输入币数"></p>
+						<p>从分享地址中取出：<input class="input w150" type="text" name="" placeholder="请输入另一半的账户地址"></p>
+						<span class="button cash bfe2f9" data="cash">取出</span>
+					</div>
+
+				</div>
+			</div>
+			<img src="https://d.fenfenriji.com/pink/static_v1/images/curtain-left.png" alt="" class="curtain" style="left: 0px;"> 
+			<img src="https://d.fenfenriji.com/pink/static_v1/images/curtain-right.png" alt="" class="curtain" style="right: 0px;">  
+			<footer>
+				<div style="position: relative; width: 100%; height: 190px;">
+					<img src="https://d.fenfenriji.com/pink/static_v1/images/book.png" alt="" class="a1"> 
+					<img src="https://d.fenfenriji.com/pink/static_v1/images/coffee.png" alt="" class="a2"> 
+					<img src="https://d.fenfenriji.com/pink/static_v1/images/brushpot.png" alt="" class="a3"> 
+					<img src="https://d.fenfenriji.com/pink/static_v1/images/calendar.png" alt="" class="a4"> 
+					<img src="https://d.fenfenriji.com/pink/static_v1/images/cat.png" alt="" class="a8"> 
+					<img src="https://d.fenfenriji.com/pink/static_v1/images/cactus.png" alt="" class="a9"> 
+					<img src="https://d.fenfenriji.com/pink/static_v1/images/picture.png" alt="" class="a10">
+				</div> 
+				<div style="height: 60px; line-height: 60px;"></div>
+			</footer>
+		</div>
+	</div>
+	<script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script type="text/javascript">
+		var dataArr = ["query","top-up","cash"]
+		var BoxArr = ["registeredBox","queryBox","top-upBox","cashBox"]
+		// 菜单
+		$(".nav").click(function(){
+			dataArr.map(function(a){
+				$("."+a).css("display","none")
+			})
+			$("."+$(this).attr("data")).css("display","inline-block")
+		})
+
+		// 没有账号？
+		$(".registered").click(function(){
+			BoxArr.map(function(a){
+				$("."+a).hide()
+			})
+			$(".registeredBox").show();
+		})
+
+		//注册提交
+		$("#registered").click(function(){
+			var registeredAccount = $("#registeredAccount").val()
+			var registeredPassword1 = $("#registeredPassword1").val()
+			var registeredPassword2 = $("#registeredPassword2").val()
+
+			if(!registeredAccount){
+				alert("请输入账号！")
+				return 
+			}
+			if(!registeredPassword1){
+				alert("请输入密码！")
+				return 
+			}
+			if(!registeredPassword2){
+				alert("请再次输入密码！")
+				return 
+			}
+			if(registeredPassword1!=registeredPassword2){
+				alert("两次输入密码不一致！")
+				return 
+			}
+
+			// 账号注册
+			var registeredData = $.ajax({
+				url:"https://webapi.sunmi.com/webapi/partners/web/developers/1.2/?service=PartnerUser.login",
+				data:{},
+				async:false
+			})
+
+			// registeredData = false 
+			if(registeredData){
+				alert("注册成功！");
+				$(".registeredBox").hide();
+			}else{
+				alert("注册失败！")
+			}
+		}) 
+
+		// 底部按钮
+		$(".button").click(function(){
+			var buttonData = $(this).attr("data");
+			// 排除账号注册
+			if(!buttonData){
+				return
+			}
+			var account = $("#account").val();
+			var password = $("#password").val();
+
+			BoxArr.map(function(a){
+				$("."+a).hide()
+			})
+
+			if(!account){
+				alert("请输入账号!")
+				return 
+			}
+
+			if(!password){
+				alert("请输入密码!")
+				return 
+			}
+
+			// 账号密码验证
+			var checkData = $.ajax({
+				url:"https://webapi.sunmi.com/webapi/partners/web/developers/1.2/?service=PartnerUser.login",
+				data:{},
+				async:false
+			})
+
+			// checkData = false
+			if(checkData){
+
+				// 查询
+				if(buttonData == "query"){
+					var queryData = $.ajax({
+						url:"https://webapi.sunmi.com/webapi/partners/web/developers/1.2/?service=PartnerUser.login",
+						data:{},
+						async:false
+					})
+
+					// queryData = 100
+					$(".queryData").text(queryData)
+					$("."+$(this).attr("data")+"Box").show();
+				}
+
+				// 充值
+				if(buttonData == "top-up"){
+					$("."+$(this).attr("data")+"Box").show();
+				}
+
+				// 取现
+				if(buttonData == "cash"){
+					$("."+$(this).attr("data")+"Box").show();
+				}
+
+			}else{
+				alert("账号或密码错误！")
+			}
+
+		})
+
+		// 关闭弹框
+		$(".shut").click(function(){
+
+			BoxArr.map(function(a){
+				$("."+a).hide()
+			})
+
+		})
+
+		// 提交按钮
+		$(".bfe2f9").click(function(){
+
+			var submitData = $(this).attr("data")
+
+			// 充值
+			if(submitData=="top-up"){
+				var topUpData = $.ajax({
+					url:"https://webapi.sunmi.com/webapi/partners/web/developers/1.2/?service=PartnerUser.login",
+					data:{},
+					async:false
+				})
+				alert("充值成功！")
+				console.log(topUpData.responseText)
+			}
+
+			// 提现
+			if(submitData=="cash"){
+				var cashData = $.ajax({
+					url:"https://webapi.sunmi.com/webapi/partners/web/developers/1.2/?service=PartnerUser.login",
+					data:{},
+					async:false
+				})
+				alert("取现成功！")
+				console.log(cashData.responseText)
+			}
+
+		})
+
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
